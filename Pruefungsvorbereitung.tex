@@ -10,6 +10,17 @@
 \input{Allgemein/Befehle.tex}
 
 \begin{document}
-	Test
+	\phantomsection
+	\pagenumbering{arabic}
+	\pdfbookmark[1]{Inhaltsverzeichnis}{inhalt}
+	\tableofcontents
+	\cleardoublepage
+	
+	\input{Inhalt.tex}
+	
+	\clearpage
+	\renewcommand{\refname}{Quellen}
+	\bibliography{Quellen}
+	\bibliographystyle{apalike-german}
 	
 \end{document}
