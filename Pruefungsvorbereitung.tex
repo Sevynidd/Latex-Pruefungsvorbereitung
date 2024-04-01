@@ -2,7 +2,8 @@
 			ngerman,
 			footnotes=multiple,
 			parskip=half,
-			numbers=noendperiod]{scrartcl}
+			numbers=noendperiod,
+			bibliography=totoc]{scrartcl}
 \usepackage[utf8]{inputenc}
 
 \input{Allgemein/Packages.tex}
@@ -11,16 +12,18 @@
 
 \begin{document}
 	\phantomsection
-	\pagenumbering{arabic}
+	\pagenumbering{gobble}
 	\pdfbookmark[1]{Inhaltsverzeichnis}{inhalt}
 	\tableofcontents
 	\cleardoublepage
+	
+	\pagenumbering{arabic}
 	
 	\input{Inhalt.tex}
 	
 	\clearpage
 	\renewcommand{\refname}{Quellen}
 	\bibliography{Quellen}
-	\bibliographystyle{apalike-german}
+	\bibliographystyle{plain}
 	
 \end{document}
