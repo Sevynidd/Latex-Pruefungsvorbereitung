@@ -42,23 +42,57 @@ Sichtbarkeit:
 
 \vspace{2em}
 
-\begin{tikzpicture}[align=center, node distance=4cm]
-	\node[minimum height=1.5cm, minimum width=3cm, draw](vererbungklasse1){Klasse 1};
-	\node[minimum height=1.5cm, minimum width=3cm, draw, right=of vererbungklasse1](vererbungklasse2){Klasse 2};
-	\draw[-{Triangle[open]}, very thick] (vererbungklasse1) -- (vererbungklasse2) node[pos=.5,above]{Vererbung};
+\begin{multicols}{2}
+	\begin{center}
+		\begin{tikzpicture}[align=center, node distance=2.5cm]
+			\node[minimum height=1cm, minimum width=2cm, draw](vererbungklasse1){Klasse 1};
+			\node[minimum height=1cm, minimum width=2cm, draw, right=of vererbungklasse1](vererbungklasse2){Klasse 2};
+			\draw[-{Triangle[open]}, thick] (vererbungklasse1) -- (vererbungklasse2) node[pos=.5,above]{Vererbung};
+			
+			\node[minimum height=1cm, minimum width=2cm, draw, below=1cm of vererbungklasse1](assoziationklasse1){Klasse 1};
+			\node[minimum height=1cm, minimum width=2cm, draw, below=1cm of vererbungklasse2](assoziationklasse2){Klasse 2};
+			\draw[thick] (assoziationklasse1) -- (assoziationklasse2) node[pos=.5,above]{Assoziation};
+			
+			\node[minimum height=1cm, minimum width=2cm, draw, below=1cm of assoziationklasse1](gerichteteassoziationklasse1){Klasse 1};
+			\node[minimum height=1cm, minimum width=2cm, draw, below=1cm of assoziationklasse2](gerichteteassoziationklasse2){Klasse 2};
+			\draw[{Rays-to}, thick] (gerichteteassoziationklasse1) -- (gerichteteassoziationklasse2) node[pos=.5,above]{gerichtete\\Assoziation};
+			
+			\node[minimum height=1cm, minimum width=2cm, draw, below=1cm of gerichteteassoziationklasse1](realisierungklasse1){Klasse 1};
+			\node[minimum height=1cm, minimum width=2cm, draw, below=1cm of gerichteteassoziationklasse2](realisierungklasse2){Klasse 2};
+			\draw[-{Triangle[open]}, thick, dashed] (realisierungklasse1) -- (realisierungklasse2) node[pos=.5,above]{Realisierung};
+			
+			\node[minimum height=1cm, minimum width=2cm, draw, below=1cm of realisierungklasse1](abhaengigeklasse){Abhängige\\Klasse};
+			\node[minimum height=1cm, minimum width=2cm, draw, below=1cm of realisierungklasse2](unabhaenigeKlasse){Unabhängige\\Klasse};
+			\draw[->, thick, dashed] (abhaengigeklasse) -- (unabhaenigeKlasse) node[pos=.5,above]{Abhängigkeit};
+		\end{tikzpicture}
+	\end{center}
 	
-	\node[minimum height=1.5cm, minimum width=3cm, draw, below=1cm of vererbungklasse1](assoziationklasse1){Klasse 1};
-	\node[minimum height=1.5cm, minimum width=3cm, draw, below=1cm of vererbungklasse2](assoziationklasse2){Klasse 2};
-	\draw[very thick] (assoziationklasse1) -- (assoziationklasse2) node[pos=.5,above]{Assoziation};
+	\begin{center}
+		\begin{tikzpicture}[align=center, node distance=2.5cm]
+			\node[minimum height=1cm, minimum width=2cm, draw](attributierteklasse1){Klasse 1};
+			\node[minimum height=1cm, minimum width=2cm, draw, right=of attributierteklasse1](attributierteklasse2){Klasse 2};
+			\draw[thick] (attributierteklasse1) -- (attributierteklasse2) node[pos=.5,above]{Attributierte\\Assoziation};
+			\node[minimum height=1cm, minimum width=2cm, draw,below right=1cm and 0cm of attributierteklasse1](assoziationsklasse){Assoziations-\\Klasse};
+			\draw[thick, dashed] (assoziationsklasse) -- (2.22,0);
+			
+			\node[minimum height=1cm, minimum width=2cm, draw, below=3cm of attributierteklasse2](Teil){Teil};
+			\node[minimum height=1cm, minimum width=2cm, draw, below=1cm of Teil, below=0.5cm of Teil](existAbhTeil){Existenz-\\abhängiges Teil};
+			\node[minimum height=3cm, minimum width=2cm, draw, below left=-1.1cm and 2.5cm of Teil](ganzesAggKomp){Ganzes};
+			\draw[-{Diamond[open]},thick] (Teil) -- (ganzesAggKomp) node[pos=.5,above,rotate=12]{Aggregation};
+			\draw[-Diamond,thick] (existAbhTeil) -- (ganzesAggKomp) node[pos=.5,below,rotate=-10]{Komposition};
+			
+			\node[minimum height=1cm, minimum width=2cm, draw, below=7.5cm of attributierteklasse1](mehrGliedrAssoKlasse1){Klasse 1};
+			\node[minimum height=1cm, minimum width=2cm, draw, below=7.5cm of attributierteklasse2](mehrGliedrAssoKlasse2){Klasse 2};
+			\node[minimum height=1cm, minimum width=2cm, draw, diamond, scale=0.5](dia) at ($(mehrGliedrAssoKlasse1)!0.5!(mehrGliedrAssoKlasse2)$) {};
+			\node[above=0.2cm of dia]{Mehrgliedrige\\Assoziation};
+			\draw[thick] (mehrGliedrAssoKlasse1) -- (dia);
+			\draw[thick] (dia) -- (mehrGliedrAssoKlasse2);
+			\node[minimum height=1cm, minimum width=2cm, draw, below right=1cm and 0.25cm of mehrGliedrAssoKlasse1](mehrGliedrAssoKlasse3){Klasse 3};
+			\draw[thick] (mehrGliedrAssoKlasse3) -- (dia);
+		\end{tikzpicture}
+	\end{center}
 	
-	\node[minimum height=1.5cm, minimum width=3cm, draw, below=1cm of assoziationklasse1](gerichteteassoziationklasse1){Klasse 1};
-	\node[minimum height=1.5cm, minimum width=3cm, draw, below=1cm of assoziationklasse2](gerichteteassoziationklasse2){Klasse 2};
-	\draw[{Rays-to}, very thick] (gerichteteassoziationklasse1) -- (gerichteteassoziationklasse2) node[pos=.5,above]{gerichtete Assoziation};
-	
-	\node[minimum height=1.5cm, minimum width=3cm, draw, below=1cm of gerichteteassoziationklasse1](realisierungklasse1){Klasse 1};
-	\node[minimum height=1.5cm, minimum width=3cm, draw, below=1cm of gerichteteassoziationklasse2](realisierungklasse2){Klasse 2};
-	\draw[-{Triangle[open]}, very thick, dashed] (realisierungklasse1) -- (realisierungklasse2) node[pos=.5,above]{Realisierung};
-\end{tikzpicture}
+\end{multicols}
 
 
 %\begin{minipage}[c]{0.65\textwidth}
