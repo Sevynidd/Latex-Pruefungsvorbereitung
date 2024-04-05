@@ -1,0 +1,30 @@
+\section{Datenbanken}
+\label{sec:Datenbanken}
+
+\begin{itemize}[noitemsep]
+	\item Datentypen: Boolesche Werte, Ganzzahl, Gleitkommawerte, Währung, Datumswerte, Texte fester und variabler Länge, BLOB, Geokoordinaten
+	\item OpenData, API-Schnittstellen
+	\item Berücksichtigung vorhandener Datenbank- und Speicherkonzepte bei der Integration und Erweiterung von Bestandssystemen
+	\item Inbetriebnahme von Speicherlösungen und Integration von Datenbanksystemen
+	\item Beachten von Schnittstellen zu weiteren Systemen
+	\item Datenquellen: nicht nur relationelle und schemafreie Datenbanken wie MySQL, MsSQL und MongoDB, sondern auch z. B. Sensoren, CSV-Dateien
+	\item Begriffe kennen und erläutern
+	\begin{itemize}[noitemsep]
+		\item Redundanz
+		\item Kardinalitäten: 1:1, 1:n, m:n
+		\item Primär-/Fremdschlüssel und andere Schlüsseltypen: anonym, künstlich/natürlich
+		\item referentielle Integrität (Aktualisierungsweitergabe, Löschweitergabe)
+		\begin{itemize}[noitemsep]
+			\item Maßnahmen bei Löschoperationen (Constraints): CASCADE, DENY/RESTRICT, SET NULL, (NO ACTION)
+		\end{itemize}
+		\item Tiefergehende Datenbankobjekte: Index, Stored Procedure, Trigger, Sequence
+		\item Replikation
+	\end{itemize}
+	\item ACID-Prinzipien für Transaktionen kennen und erläutern (atomicity, consistency, isolation, durability)
+\end{itemize}
+
+\input{InhaltTEX/Datenbanken/Datenbankmodelle.tex}
+
+\input{InhaltTEX/Datenbanken/Normalisierung.tex}
+
+\input{InhaltTEX/Datenbanken/SQL.tex}
