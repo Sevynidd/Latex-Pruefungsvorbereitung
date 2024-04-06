@@ -143,7 +143,67 @@ IHK Belegsatz \cite{IHKBelegsatz}
 	\setlength\arrayrulewidth{1pt}
 	\begin{tabular}{|p{0.45\textwidth} | p{0.55\textwidth}|}
 		\hline
-		\rowcolor{tableLightGray} \textit{Datenmanipulation} & \\
+		\rowcolor{tableLightGray} \textit{Aggregatfunktionen} & \\
+		\hline
+		\textbf{AVG} (Spaltenname) & Ermittelt das arithmetische Mittel aller Werte im angegebenen Feld\\
+		\hline
+		\textbf{COUNT} (Spaltenname | *) & Ermittelt die Anzahl der Datensätze mit Nicht-NULL-Werten im angegebenen Feld oder alle Datensätze der Tabelle (dann mit Operator *)\\
+		\hline
+		\textbf{SUM} (Spaltenname | Formel) & Ermittelt die Summe aller Werte im angegebenen Feld oder der Formelergebnisse\\
+		\hline
+		\textbf{MIN} (Spaltenname | Formel) & Ermittelt den kleinsten aller Werte im angegebenen Feld\\
+		\hline
+		\textbf{MAX} (Spaltenname | Formel) & Ermittelt den größten aller Werte im angegebenen Feld\\
+		\hline
+		\rowcolor{tableLightGray} \textit{Funktionen} & \\
+		\hline
+		\textbf{LEFT} (Zeichenkette, Anzahlzeichen) & Liefert \textit{Anzahlzeichen} der Zeichenkette von links.\\
+		\hline
+		\textbf{RIGHT} (Zeichenkette, Anzahlzeichen) & Liefert \textit{Anzahlzeichen} der Zeichenkette von rechts.\\
+		\hline
+		\textbf{CURRENT} & Liefert das aktuelle Datum mit der aktuellen Uhrzeit\\
+		\hline
+		\textbf{CONVERT(time,}[DatumZeit]) & Liefert die Uhrzeit aus einer DatumZeit-Angabe\\
+		\hline
+		\textbf{DATE} (Wert) & Wandelt einen Wert in ein Datum um\\
+		\hline
+		\textbf{DAY} (Datum) & Liefert den Tag des Monats aus dem angegebenen Datum\\
+		\hline
+		\textbf{MONTH} (Datum) & Liefert den Monat aus dem angegebenen Datum\\
+		\hline
+		\textbf{TODAY} & Liefert das aktuelle Datum\\
+		\hline
+		\textbf{WEEKDAY} (Datum) & Liefert den Tag der Woche aus dem angegebenen Datum\\
+		\hline
+		\textbf{YEAR} (Datum) & Liefert das Jahr aus dem angegebenen Datum\\
+		\hline
+		\textbf{DATEADD} (Datumsteil, Intervall, Datum) & Fügt einem Datum ein Intervall (ausgefrückt in den unter Datumsteil angegebenen Einheiten) hinzu\\
+		\hline
+		\textbf{DATEDIFF} (Datumsteil, Anfangsdatum, Enddatum) Datumsteile: \textbf{DAY, MONTH, YEAR} & Liefert Enddatum-Startdatum (ausgedrückt in den unter Datumsteil angegebenen Einheiten)\\
+		\hline
+		\rowcolor{tableLightGray} \textit{Operatoren} & \\
+		\hline
+		\textbf{AND} & Logisches UND\\
+		\hline
+		\textbf{LIKE} & Überprüfung von Text auf Gleichheit wenn Platzhalter ('regular expressions') eingesetzt werden.\\
+		\hline
+		\textbf{NOT} & Logische Negation\\
+		\hline
+		\textbf{OR} & Logisches ODER\\
+		\hline
+		\textbf{IS NULL} & Überprüfung auf NULL\\
+		\hline
+		\textbf{=} & Test auf Gleichheit\\
+		\hline
+		\textbf{>, >=, <, <=, <>} & Test auf Ungleichheit\\
+		\hline
+		\textbf{*} & Multiplikation\\
+		\hline
+		\textbf{/} & Division\\
+		\hline
+		\textbf{+} & Addition, positives Vorzeichen\\
+		\hline
+		\textbf{-} & Subtraktion, negatives Vorzeigen\\
 		\hline
 	\end{tabular}
 \end{center}
