@@ -1,3 +1,23 @@
 \subsection{Datenbankmodelle und -modellierung}
 \label{sec:Datenbankmodelle}
 
+\subsubsection{Relationale und nicht-relationale Datenbanken}
+\label{sec:RelationaleDatenbanken}
+
+Eine nicht relationale Datenbank ist eine Datenbank, die nicht das tabellarische Schema mit Zeilen und Spalten verwendet, das in den meisten herkömmlichen Datenbanksystemen zum Einsatz kommt. Nicht relationale Daten verwenden stattdessen ein Speichermodell, das für die spezifischen Anforderungen des gespeicherten Datentyps optimiert ist. So können die Daten beispielsweise als einfache Schlüssel-Wert-Paare, als JSON-Dokumente oder als Diagramm mit Edges und Scheitelpunkten gespeichert werden. \cite{microsoftNichtRelational}
+
+\subsubsection{ERD (Entity-Relationship-Modell)}
+\label{sec:ERD}
+
+\begin{minipage}{0.20\textwidth}
+	\begin{tikzpicture}[align=center, node distance=1cm]
+		\node (entity) [entity] {Entität};
+		\node (relationship) [relationship, below=of entity] {Beziehung};
+		\node (attribute) [attribute, below=of relationship] {Attribut};
+	\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.70\textwidth}
+	Kardinalitäten:\\
+\end{minipage}
+
