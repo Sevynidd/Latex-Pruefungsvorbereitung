@@ -4,20 +4,51 @@
 \subsubsection{Relationale und nicht-relationale Datenbanken}
 \label{sec:RelationaleDatenbanken}
 
-Eine nicht relationale Datenbank ist eine Datenbank, die nicht das tabellarische Schema mit Zeilen und Spalten verwendet, das in den meisten herkömmlichen Datenbanksystemen zum Einsatz kommt. Nicht relationale Daten verwenden stattdessen ein Speichermodell, das für die spezifischen Anforderungen des gespeicherten Datentyps optimiert ist. So können die Daten beispielsweise als einfache Schlüssel-Wert-Paare, als JSON-Dokumente oder als Diagramm mit Edges und Scheitelpunkten gespeichert werden. \cite{microsoftNichtRelational}
+Eine nicht relationale Datenbank ist eine Datenbank, die nicht das tabellarische Schema mit Zeilen und Spalten verwendet, das in den meisten herkömmlichen Datenbanksystemen zum Einsatz kommt. \hl{Nicht relationale Daten verwenden stattdessen ein Speichermodell, das für die spezifischen Anforderungen des gespeicherten Datentyps optimiert ist}. So können die Daten beispielsweise als einfache \hl{Schlüssel-Wert-Paare}, als \hl{JSON-Dokumente} oder als Diagramm mit Edges und Scheitelpunkten gespeichert werden. \cite{microsoftNichtRelational}
 
 \subsubsection{ERD (Entity-Relationship-Modell)}
 \label{sec:ERD}
 
-\begin{minipage}{0.20\textwidth}
+\begin{center}
 	\begin{tikzpicture}[align=center, node distance=1cm]
-		\node (entity) [entity] {Entität};
-		\node (relationship) [relationship, below=of entity] {Beziehung};
-		\node (attribute) [attribute, below=of relationship] {Attribut};
-	\end{tikzpicture}
-\end{minipage}
-\hfill
-\begin{minipage}{0.70\textwidth}
-	Kardinalitäten:\\
-\end{minipage}
+	\node (entity1) [entity] {Entität 1};
+	\node (attribute) [attribute, left=of entity1] {attribut};
+	\draw (entity1) -- (attribute);
+	\node (relationship) [relationship, right=of entity1] {beziehung};
+	\draw (entity1) -- (relationship) node[pos=.3,above]{1};
+	\node (entity2) [entity, right=of relationship] {Entität 2};
+	\draw (relationship) -- (entity2) node[pos=.7,above]{n};
+\end{tikzpicture}
+\end{center}
+
+Kardinalitäten:\\
+
+Entitäten besitzen unterschiedliche Kardinalitäten, also die Anzahl zuordenbarer Objekte einer anderen Entität. Es gibt die Ausprägungen 1:1 (eins zu eins), 1:n (eins zu mehreren) und n:m (mehrere zu mehreren). \cite{ERDKardinalitaeten}
+
+
+\subsubsection{NoSQL}
+\label{sec:NoSQL}
+
+NoSQL-Datenbanken wurden speziell für bestimmte Datenmodelle entwickelt und \hl{speichern Daten in flexiblen Schemas}, die sich leicht für moderne Anwendungen skalieren lassen. NoSQL-Datenbanken sind für ihre einfache Entwicklung, Funktionalität und Skalierbarkeit weithin bekannt. \cite{AWSnoSQL}
+
+\paragraph{Flexibilität} NoSQL-Datenbanken bieten in der Regel flexible Schemata, die eine schnellere und iterativere Entwicklung ermöglichen. Das flexible Datenmodell macht NoSQL-Datenbanken ideal für halbstrukturierte und unstrukturierte Daten.
+
+\paragraph{Skalierbarkeit} NoSQL-Datenbanken sind in der Regel so konzipiert, dass sie durch die Verwendung von verteilten Hardware-Clustern skaliert werden können, im Gegensatz zu einer Skalierung durch das Hinzufügen teurer und robuster Server. Einige Cloud-Anbieter übernehmen diese Vorgänge im Hintergrund als vollständig verwaltete Dienstleistung.
+
+\paragraph{Hohe Leistung} NoSQL-Datenbanken sind für bestimmte Datenmodelle und Zugriffsmuster optimiert. Diese ermöglichen eine höhere Leistung, als wenn Sie versuchen würden, ähnliche Funktionen mit relationalen Datenbanken zu erreichen.
+
+\paragraph{Hochfunktionell} NoSQL-Datenbanken bieten hochfunktionelle APIs und Datentypen, die speziell für ihre jeweiligen Datenmodelle entwickelt wurden.
+
+\subsubsection{Welche Arten von NoSQL-Datenbanken gibt es?}
+\label{sec:ArtenNoSQL}
+
+\paragraph{Schlüsselwertdatenbanken} Eine Schlüsselwertdatenbank \hl{speichert Daten als eine Sammlung von Schlüsselwertpaaren}, in denen ein Schlüssel als eindeutiger Identifikator dient. Schlüssel und Werte können alles sein, von einfachen Objekten bis hin zu komplexen zusammengesetzten Objekten. \hl{Anwendungsfälle wie Gaming, Werbung und IoT} eignen sich besonders gut für das Schlüssel-Werte-Datenspeicherungsmodell. 
+
+\paragraph{Dokumentdatenbanken} Dokumentdatenbanken verfügen über das gleiche Dokumentmodellformat, das Entwickler in ihrem Anwendungscode verwenden. Sie \hl{speichern Daten als JSON-Objekte}, die flexibel, halbstrukturiert und hierarchisch aufgebaut sind. Aufgrund des flexiblen, semi-strukturierten und hierarchischen Aufbaus der Dokumente und Dokumentdatenbanken können diese entsprechend den Anforderungen der Anwendungen weiterentwickelt werden. Das Dokumentdatenbankmodell eignet sich gut für \hl{Kataloge, Benutzerprofile und Content-Management-Systeme}, bei denen jedes Dokument einzigartig ist und sich im Laufe der Zeit weiterentwickelt.
+
+\paragraph{Graphdatenbanken} Der Zweck einer Graphdatenbank besteht darin, das Entwickeln und Ausführen von Anwendungen zu vereinfachen, \hl{die mit hochgradig verbundenen Datensätzen arbeiten}. Sie verwenden Knoten zur Speicherung von Dateneinheiten und Edges zur Speicherung von Beziehungen zwischen Einheiten. Ein Edge hat immer einen Startknoten, einen Endknoten, einen Typ und eine Richtung. Er kann Eltern-Kind-Beziehungen, Aktionen, Besitzverhältnisse und Ähnliches beschreiben. Die Anzahl und Art der Beziehungen in einem Knoten ist nicht beschränkt. Sie können eine Graphdatenbank verwenden, um Anwendungen zu erstellen und auszuführen, die mit stark verbundenen Datensätzen arbeiten. Typische \hl{Anwendungsfälle für eine Graphdatenbank sind Social Networking, Empfehlungsmodule, Betrugserkennung und Wissensdiagramme}.
+
+\paragraph{In-Memory-Datenbanken} Während andere nicht-relationale Datenbanken Daten auf Festplatten oder SSDs speichern, sind In-Memory-Datenspeicher so konzipiert, dass \hl{kein Zugriff auf Festplatten erforderlich ist}. Sie eignen sich ideal für Anwendungen, die \hl{Reaktionszeiten im Mikrosekundenbereich erfordern} oder große Verkehrsspitzen aufweisen. Sie können sie in \hl{Gaming- und Ad-Tech-Anwendungen für Features wie Bestenlisten, Sitzungsspeicher und Echtzeitanalysen} verwenden. 
+
+\paragraph{Suchmaschinendatenbank} Eine Suchmaschinendatenbank ist eine Art \hl{nichtrelationaler Datenbank, die sich der Suche nach Dateninhalten widmet}, z. B. nach Anwendungsausgabeprotokollen, die von Entwicklern zur Problembehandlung verwendet werden. Sie verwendet Indizes, um ähnliche Merkmale unter den Daten zu kategorisieren und die Suchfunktion zu vereinfachen. Suchmaschinendatenbanken sind für die \hl{Sortierung unstrukturierter Daten wie Images und Videos} optimiert. 
 
