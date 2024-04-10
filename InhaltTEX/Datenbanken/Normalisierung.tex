@@ -5,7 +5,7 @@ Quelle: DatabaseCamp \cite{normalisierung}
 
 \paragraph{1. Normalform} Eine Relation liegt in der ersten Normalform vor, wenn alle Attributwerte \hl{atomar} vorliegen.
 
-Das bedeutet, dass jedes Datenfeld lediglich einen Wert enthalten darf. Außerdem sollte sichergestellt sein, dass jede Spalte nur Werte desselben Datentyps (Numerisch, Text, etc.) enthält. Folgende Beispiele müssten entsprechend verändert werden, damit eine Datenbank in der 1. Normalform vorhanden ist:
+Das bedeutet, dass \hl{jedes Datenfeld lediglich einen Wert enthalten darf}. Außerdem sollte sichergestellt sein, dass jede Spalte nur Werte desselben Datentyps (Numerisch, Text, etc.) enthält. Folgende Beispiele müssten entsprechend verändert werden, damit eine Datenbank in der 1. Normalform vorhanden ist:
 
 \begin{multicols}{2}
 	\begin{itemize}
@@ -28,13 +28,25 @@ Das bedeutet, dass jedes Datenfeld lediglich einen Wert enthalten darf. Außerde
 
 \paragraph{2. Normalform} Eine Relation liegt in der zweiten Normalform vor, wenn sie in der ersten Normalform vorliegt und alle \hl{Nichtschlüsselattribute voll funktional vom gesamten Primärschlüssel abhängig} sind.
 
+
+\begin{wrapfigure}{r}{0.55\textwidth}
+	\includegraphics[scale=.26]{Bilder/SternSchemaDB.png}
+\end{wrapfigure}
+
 Der Primärschlüssel bezeichnet ein Attribut, das zur eindeutigen Identifikation einer Datenbankzeile verwendet werden kann. Dazu zählen beispielsweise die Rechnungsnummer zur Identifikation einer Rechnung oder die Ausweisnummer zur Identifikation einer Person.
 
-Konkret bedeutet dies in der Anwendung, dass alle Merkmale ausgelagert werden müssen, die nicht ausschließlich vom Primärschlüssel abhängig sind. In der Praxis führt dies dann oft zu einem sogenannten Sternschema.
+\vspace{1em}
 
+Konkret bedeutet dies in der Anwendung, dass \hl{alle Merkmale ausgelagert werden müssen, die nicht ausschließlich vom Primärschlüssel abhängig sind}. In der Praxis führt dies dann oft zu einem sogenannten Sternschema.
 
 
 \paragraph{3. Normalform} Eine Relation liegt in der dritten Normalform vor, wenn sie in der ersten und zweiten Normalform vorliegt und \hl{keine transitiven Abhängigkeiten} bestehen.
+
+Eine transitive Abhängigkeit liegt vor, wenn ein Attribut, welches kein Primärschlüssel ist, nicht nur von diesem abhängt, sondern auch von anderen Attributen.
+
+Wenn wir in unserem Beispiel eine Tabelle haben, in der die Rechnungsnummer, die Produktnummer und der Preis gegeben ist, haben wir höchstwahrscheinlich eine transitive Abhängigkeit. \hl{Der Preis des Produktes hängt nämlich nicht wirklich von der Rechnungsnummer ab, sondern vielmehr von der Produktnummer}, da für jedes Produkt ein fester Preis definiert ist.
+
+Diese Abhängigkeit kann man auflösen, indem man die Produkte in eine neue Tabelle auslagert und somit das Attribut Preis aus der ursprünglichen Tabelle rausfällt.
 
 \subsubsection{Anomalien}
 
