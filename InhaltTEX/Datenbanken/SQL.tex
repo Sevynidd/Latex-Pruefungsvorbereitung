@@ -8,7 +8,7 @@ Alle SQL-Komponenten für Abfragen siehe \referenz{sec:Datenbanken}.
 
 Quelle: Tino Hempel \cite{projektionSelektion}
 
-\paragraph{Selektion} Bei der Selektion werden Zeilen aus einer Tabelle ausgewählt, die bestimmten Eigenschaften genügen.
+\paragraph{Selektion} Bei der Selektion werden \hl{Zeilen aus einer Tabelle} ausgewählt, die bestimmten Eigenschaften genügen.
 
 Aus der Tabelle Schüler sollen alle Zeilen selektiert werden, in denen der Name "Müller" steht. 
 Die Selektion hat also die Form: $S_{Name} = _{'Mueller'}(Schueler)$
@@ -61,7 +61,7 @@ Die Selektion hat also die Form: $S_{Name} = _{'Mueller'}(Schueler)$
 	\end{center}
 \end{minipage}
 
-\paragraph{Projektion} Bei der Projektion werden Spalten aus einer Tabelle ausgewählt, die bestimmten Eigenschaften genügen.
+\paragraph{Projektion} Bei der Projektion werden \hl{Spalten aus einer Tabelle} ausgewählt, die bestimmten Eigenschaften genügen.
 
 Aus der Tabelle Schüler sollen alle Spalten mit dem Attribut 'Name' projiziert werden. 
 Die Projektion hat also die Form: $P_{Name}(Schueler)$
@@ -121,4 +121,34 @@ Die Projektion hat also die Form: $P_{Name}(Schueler)$
 \end{minipage}
 
 
+\subsubsection{DDL, DML \& DCL}
+\label{sec:DDLDMLDCL}
 
+Quelle: GeeksforGeeks \cite{DDLDMLDCL}
+
+\begin{enumerate}
+	\item DDL - Data Definition Language
+	\item DQL - Data Query Language
+	\item DML - Data Manipulation Language
+	\item DCL - Data Control Language
+	\item TCL - Transaction Control Language
+\end{enumerate}
+
+\paragraph{DDL} besteht aus den SQL-Befehlen, die zur Definition des Datenbankschemas verwendet werden können. Sie befasst sich lediglich mit Beschreibungen des Datenbankschemas und wird zur Erstellung und Änderung der Struktur von Datenbankobjekten in der Datenbank verwendet. DDL ist ein Satz von SQL-Befehlen, die zum Erstellen, Ändern und Löschen von Datenbankstrukturen, aber nicht von Daten verwendet werden. Diese Befehle werden normalerweise nicht von einem normalen Benutzer verwendet, der über eine Anwendung auf die Datenbank zugreifen sollte.
+
+\begin{itemize}
+	\item CREATE
+	\item DROP
+	\item ALTER
+	\item TRUNCATE
+	\begin{itemize}
+		\item Dieser Befehl wird verwendet, um alle Datensätze aus einer Tabelle zu entfernen, einschließlich aller für die Datensätze zugewiesenen Speicherplätze
+	\end{itemize}
+	\item COMMENT
+	\item RENAME
+	\begin{itemize}
+		\item Dient zum Umbenennen eines in der Datenbank vorhandenen Objekts
+	\end{itemize}
+\end{itemize}
+
+\paragraph{DQL} 
