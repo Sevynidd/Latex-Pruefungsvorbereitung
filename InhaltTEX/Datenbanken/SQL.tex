@@ -1,2 +1,124 @@
 \subsection{SQL}
 \label{sec:SQL}
+
+Alle SQL-Komponenten für Abfragen siehe \referenz{sec:Datenbanken}.
+
+\subsubsection{Projektion vs. Selektion}
+\label{sec:ProjektionSelektion}
+
+Quelle: Tino Hempel \cite{projektionSelektion}
+
+\paragraph{Selektion} Bei der Selektion werden Zeilen aus einer Tabelle ausgewählt, die bestimmten Eigenschaften genügen.
+
+Aus der Tabelle Schüler sollen alle Zeilen selektiert werden, in denen der Name "Müller" steht. 
+Die Selektion hat also die Form: $S_{Name} = _{'Mueller'}(Schueler)$
+
+\vspace{1em}
+
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+		Schüler \\
+		\vspace{1em}
+		\bgroup
+		\setlength{\tabcolsep}{1em}
+		\def\arraystretch{1.5}
+		\begin{tabular}{|c|l|l|}
+			\hline
+			\rowcolor{tableLightGray}\underline{SNr} & Vorname & Name \\
+			\hline
+			4711 & Paul & Müller \\
+			\hline
+			0815 & Erich & Schmidt \\
+			\hline
+			7472 & Sven & Lehmann \\
+			\hline
+			1234 & Olaf & Müller \\
+			\hline
+			2313 & Jürgen & Paulsen \\
+			\hline
+		\end{tabular}
+		\egroup
+	\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+		$S_{Name} = _{'Mueller'}(Schueler)$ \\
+		\vspace{1em}
+		\bgroup
+		\setlength{\tabcolsep}{1em}
+		\def\arraystretch{1.5}
+		\begin{tabular}{|c|l|l|}
+			\hline
+			\rowcolor{tableLightGray}\underline{SNr} & Vorname & Name \\
+			\hline
+			12 & Paul & Müller \\
+			\hline
+			308 & Olaf & Müller \\
+			\hline
+		\end{tabular}
+		\egroup
+	\end{center}
+\end{minipage}
+
+\paragraph{Projektion} Bei der Projektion werden Spalten aus einer Tabelle ausgewählt, die bestimmten Eigenschaften genügen.
+
+Aus der Tabelle Schüler sollen alle Spalten mit dem Attribut 'Name' projiziert werden. 
+Die Projektion hat also die Form: $P_{Name}(Schueler)$
+
+\vspace{1em}
+
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+		Schüler \\
+		\vspace{1em}
+		\bgroup
+		\setlength{\tabcolsep}{1em}
+		\def\arraystretch{1.5}
+		\begin{tabular}{|c|l|l|}
+			\hline
+			\rowcolor{tableLightGray}\underline{SNr} & Vorname & Name \\
+			\hline
+			4711 & Paul & Müller \\
+			\hline
+			0815 & Erich & Schmidt \\
+			\hline
+			7472 & Sven & Lehmann \\
+			\hline
+			1234 & Olaf & Müller \\
+			\hline
+			2313 & Jürgen & Paulsen \\
+			\hline
+		\end{tabular}
+		\egroup
+	\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+		$P_{Name}(Schueler)$ \\
+		\vspace{1em}
+		\bgroup
+		\setlength{\tabcolsep}{1em}
+		\def\arraystretch{1.5}
+		\begin{tabular}{|l|}
+			\hline
+			\rowcolor{tableLightGray} Name \\
+			\hline
+			Müller \\
+			\hline
+			Schmidt \\
+			\hline
+			Lehmann \\
+			\hline
+			Müller \\
+			\hline
+			Paulsen \\
+			\hline
+		\end{tabular}
+		\egroup
+	\end{center}
+\end{minipage}
+
+
+

@@ -53,13 +53,13 @@ Diese Abhängigkeit kann man auflösen, indem man die Produkte in eine neue Tabe
 
 Quelle: DatabaseCamp \cite{anomalien}
 
-Anomalien in Datenbanken treten bei einer nicht existierenden oder fehlerhaften Normalisierung auf.
+Anomalien in Datenbanken treten bei einer \hl{nicht existierenden oder fehlerhaften Normalisierung} auf.
 Es existieren drei Arten von Datenbank-Anomalien, die Einfüge-Anomalie, die Änderungs-Anomalie und die Lösch-Anomalie.
 
 In der Datenbanktentwicklung ist die Dritte Normalform oft ausreichend, um die perfekte Balance aus Redundanz, Performance und Flexibilität für eine Datenbank zu gewährleisten. Sie eliminiert auch die meisten Anomalien in einer Datenbank, aber nicht alle.
 
-\paragraph{Einfügeanomalie} Bei einem fehlerhaften oder inkorrekten Datenbankdesign kann es bei der Einfüge-Anomalie passieren, dass Daten gar nicht in die Datenbank übernommen werden, wenn zum Beispiel der Primärschlüssel keinen Wert erhalten hat, oder eine unvollständigen Eingabe von Daten zu Inkonsistenzen führt.
+\paragraph{Einfügeanomalie} Bei einem fehlerhaften oder inkorrekten Datenbankdesign kann es bei der Einfüge-Anomalie passieren, dass Daten gar nicht in die Datenbank übernommen werden, wenn zum Beispiel der Primärschlüssel keinen Wert erhalten hat, oder eine \hl{unvollständigen Eingabe von Daten} zu Inkonsistenzen führt.
 
-\paragraph{Änderungsanomalie} Bei der Änderungs-Anomalie, auch Update-Anomalie genannt, werden gleiche Attribute eines Datensatzes in einer Transaktion nicht automatisch geändert. So entsteht eine Inkonsistenz der Daten.
+\paragraph{Änderungsanomalie} Bei der Änderungs-Anomalie, auch Update-Anomalie genannt, werden \hl{gleiche Attribute eines Datensatzes in einer Transaktion nicht automatisch geändert}. So entsteht eine Inkonsistenz der Daten.
 
-\paragraph{Löschanomalie} Bei einer Löschanomalie kann es passieren, dass ein Benutzer einer Datenbank aktiv Informationen löschen will und damit indirekt, aufgrund des fehlerhaften Datenbankdesigns, andere zusammenhängende Informationen parallel mitlöscht.
+\paragraph{Löschanomalie} Bei einer Löschanomalie kann es passieren, dass ein Benutzer einer Datenbank aktiv Informationen löschen will und damit indirekt, aufgrund des fehlerhaften Datenbankdesigns, \hl{andere zusammenhängende Informationen parallel mitlöscht}.
