@@ -74,3 +74,32 @@ linktoc=all,
 
 \usepackage{multicol}
 \usepackage{enumitem}
+\usepackage{listings}
+\definecolor{lightgray}{HTML}{EFEFEF}
+\lstdefinestyle{listingsStyle}{
+	backgroundcolor=\color{lightgray},
+	commentstyle=\color{green},
+	keywordstyle=\color{magenta},
+	numberstyle=\color{gray},
+	stringstyle=\color{purple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+\lstset{style=listingsStyle,
+	literate=%
+	{Ö}{{\"O}}1
+	{Ä}{{\"A}}1
+	{Ü}{{\"U}}1
+	{ß}{{\ss}}2
+	{ü}{{\"u}}1
+	{ä}{{\"a}}1
+	{ö}{{\"o}}1}
