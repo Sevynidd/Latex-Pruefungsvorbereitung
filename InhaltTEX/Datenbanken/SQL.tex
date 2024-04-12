@@ -128,13 +128,47 @@ Quelle: GeeksforGeeks \cite{DDLDMLDCL}
 
 \begin{enumerate}
 	\item DDL - Data Definition Language
-	\item DQL - Data Query Language
 	\item DML - Data Manipulation Language
+	\item DQL - Data Query Language
 	\item DCL - Data Control Language
-	\item TCL - Transaction Control Language
 \end{enumerate}
 
-\paragraph{DDL} besteht aus den SQL-Befehlen, die zur Definition des Datenbankschemas verwendet werden können. Sie befasst sich lediglich mit Beschreibungen des Datenbankschemas und wird zur Erstellung und Änderung der Struktur von Datenbankobjekten in der Datenbank verwendet. DDL ist ein Satz von SQL-Befehlen, die zum Erstellen, Ändern und Löschen von Datenbankstrukturen, aber nicht von Daten verwendet werden. Diese Befehle werden normalerweise nicht von einem normalen Benutzer verwendet, der über eine Anwendung auf die Datenbank zugreifen sollte.
+\begin{center}
+	\begin{tikzpicture}[
+	item/.style={rectangle,draw,fill=blue!30, inner sep = 10},
+	subitem/.style={rectangle,draw,fill=blue!20, inner sep = 8},
+	grandchild/.style={grow=down,xshift=1em,anchor=west,
+		edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}},
+	first/.style={level distance=6ex},
+	second/.style={level distance=12ex},
+	third/.style={level distance=18ex},
+	forth/.style={level distance=24ex},
+	level 1/.style={sibling distance=10em}]
+	% Parents
+	\coordinate
+	node[item,anchor=east]{SQL Commands}
+	child[grow=down,level distance=2.5ex]
+	[edge from parent fork down]
+	% Children and grandchildren
+	child{node[item] {DDL}
+		child[grandchild,first] {node[subitem]{CREATE}}
+		child[grandchild,second] {node[subitem]{DROP}}
+		child[grandchild,third] {node[subitem] {ALTER}}
+		child[grandchild, forth] {node[subitem] {TRUNCATE}}}
+	child{node[item] {DML}
+		child[grandchild,first] {node[subitem]{INSERT}}
+		child[grandchild,second] {node[subitem]{UPDATE}}
+		child[grandchild,third] {node[subitem]{DELETE}}}
+	child {node[item]{DQL}
+		child[grandchild,first] {node[subitem]{SELECT}}}
+	child {node[item]{DCL}
+		child[grandchild,first] {node[subitem]{GRANT}}
+		child[grandchild,second] {node[subitem]{REVOKE}}};
+\end{tikzpicture}
+\end{center}
+
+
+\paragraph{DDL} besteht aus den SQL-Befehlen, die zur \hl{Definition des Datenbankschemas} verwendet werden können. Sie befasst sich lediglich mit \hl{Beschreibungen des Datenbankschemas} und wird zur \hl{Erstellung und Änderung der Struktur von Datenbankobjekten in der Datenbank} verwendet. DDL ist ein Satz von SQL-Befehlen, die zum Erstellen, Ändern und Löschen von Datenbankstrukturen, aber nicht von Daten verwendet werden. Diese Befehle werden normalerweise nicht von einem normalen Benutzer verwendet, der über eine Anwendung auf die Datenbank zugreifen sollte.
 
 \begin{multicols}{2}
 	\begin{itemize}
