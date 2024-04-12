@@ -187,13 +187,13 @@ Quelle: sqlshack.com \cite{crud}
 	(3, 'Pravitha');
 \end{lstlisting}
 
-\paragraph{R} refers to SELECT (data retrieval) operation. The word ‘read’ retrieves data or record-set from a listed table(s). SQL uses the SELECT command to retrieve the data.
+\paragraph{R} refers to \hl{SELECT} (data retrieval) operation. The word ‘read’ retrieves data or record-set from a listed table(s). SQL uses the SELECT command to retrieve the data.
 
 \begin{lstlisting}[language=SQL]
 	SELECT * FROM <TableName>;
 \end{lstlisting}
 
-\paragraph{U} refers to Update operation. Using the Update keyword, SQL brings a change to an existing record(s) of the table. When performing an update, you’ll need to define the target table and the columns that need to update along with the associated values, and you may also need to know which rows need to be updated. In general, you want to limit the number of rows in order to avoid lock escalation and concurrency issues.
+\paragraph{U} refers to Update operation. Using the \hl{Update} keyword, SQL brings a change to an existing record(s) of the table. When performing an update, you’ll need to define the target table and the columns that need to update along with the associated values, and you may also need to know which rows need to be updated. In general, you want to limit the number of rows in order to avoid lock escalation and concurrency issues.
 
 \begin{lstlisting}[language=SQL]
 	UPDATE <TableName>
@@ -201,7 +201,7 @@ Quelle: sqlshack.com \cite{crud}
 	WHERE <Expression>
 \end{lstlisting}
 
-\paragraph{D} refers to removing a record from a table. SQL uses the SQL DELETE command to delete the record(s) from the table.
+\paragraph{D} refers to removing a record from a table. SQL uses the SQL \hl{DELETE} command to delete the record(s) from the table.
 
 \begin{lstlisting}[language=SQL]
 	DELETE FROM <TableName>
@@ -216,9 +216,126 @@ Quelle: sqlshack.com \cite{crud}
 \subsubsection{Aggregatfunktionen}
 \label{sec:Aggregatfunktionen}
 
-\subsubsection{Schnitt-, Vereinigungs- und Differenzmenge}
-\label{sec:SchnittVereinigungsDifferenzmenge}
+\subsubsection{Mengenoperationen (Schnitt-, Vereinigungs- und Differenzmenge)}
+\label{sec:Mengenoperationen}
+
+Quelle: Glossar hs-augsburg \cite{mengenoperationHsaugsburg}
+
+Mengenoperatoren \hl{verbinden zwei Abfragen zu einem Resultat}.
+
+Beispieltabelle: \\
+
+\begin{minipage}{0.45\textwidth}
+	\begin{center}
+		Tabelle student \\
+		\vspace{1em}
+		\bgroup
+		\setlength{\tabcolsep}{1em}
+		\def\arraystretch{1.5}
+		\begin{tabular}{l l l}
+			\rowcolor{tableLightGray}matrikel\_nr & name & vorlesung \\
+			\hline
+			911574 & Meier & Java \\
+			676676 & Schulz & Datenbanken
+		\end{tabular}
+		\egroup
+	\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+	\begin{center}
+		Tabelle lehrender \\
+		\vspace{1em}
+		\bgroup
+		\setlength{\tabcolsep}{1em}
+		\def\arraystretch{1.5}
+		\begin{tabular}{l l l}
+			\rowcolor{tableLightGray}matrikel\_nr & name & vorlesung \\
+			\hline
+			878999 & Kowa & Datenbanken \\
+			665544 & Müller & XML
+		\end{tabular}
+		\egroup
+	\end{center}
+\end{minipage}
+
+
+\paragraph{UNION} bildet die Vereinigung zweier Relationen indem \hl{Zeilen der ersten Menge oder des ersten Operanden mit allen Zeilen der zweiten Menge} zusammengefasst werden. Zeilen, die in der Ergebnismenge zweimal vorkommen, werden zu einer einzigen Zeile zusammengefasst. Die Datentypen der Spalten müssen kompatibel sein, d.h. es muss entweder ein impliziter Cast (z.B. int auf double) möglich sein, oder wenn dies nicht möglich ist, muß ein expliziter Cast erfolgen. - dies bezieht sich auch auf die Anordnung der Spalten in der Abfrage.
+
+\begin{lstlisting}[language=SQL]
+	SELECT name  FROM student
+	UNION
+	SELECT name FROM lehrender
+\end{lstlisting}
+
+Ergebnis:\\
+
+{
+\bgroup
+\setlength{\tabcolsep}{1em}
+\def\arraystretch{1.5}
+\begin{tabular}{l}
+	\rowcolor{tableLightGray}name \\
+	\hline
+	Meier \\
+	Schulz \\
+	Kowa \\
+	Müller
+\end{tabular}
+\egroup
+}
+
+\paragraph{UNION ALL} vereinigt alle Zeilen der ersten Menge oder des ersten Operanden mit allen Zeilen der zweiten Menge. Im Unterschied zu UNION werden auch die Duplikate ausgegeben.
+
+\paragraph{INTERSECT} überprüft die \hl{Zeilen der beiden Eingangsmengen und gibt nur jene Zeilen aus, die in beiden Eingangsmengen vorkommen}. Die Durchschnittsmenge wird aus den zwei Relationen gebildete. Auch hier werden vor dem Erstellen der Ergebnismenge die redundanten Zeilen ausgeschaltet.
+
+\begin{lstlisting}[language=SQL]
+	SELECT vorlesung FROM student
+	INTERSECT
+	SELECT vorlesung FROM lehrender
+\end{lstlisting}
+
+Ergebnis:\\
+
+{
+\bgroup
+\setlength{\tabcolsep}{1em}
+\def\arraystretch{1.5}
+\begin{tabular}{l}
+	\rowcolor{tableLightGray}vorlesung \\
+	\hline
+	Datenbanken
+\end{tabular}
+\egroup
+}
+
+\paragraph{MINUS} gibt die Zeilen aus, \hl{die in der ersten Menge, NICHT aber in der zweiten Menge} enthalten sind. Zeilen, die in der ersten Menge zweimal vorkommen, werden auf Redundanz überprüft und komprimiert, bevor der Vergleich mit der zweiten Menge beginnt.
+
+\begin{lstlisting}[language=SQL]
+	SELECT vorlesung FROM student
+	MINUS
+	SELECT vorlesung FROM lehrender
+\end{lstlisting}
+
+Ergebnis:\\
+
+{
+	\bgroup
+	\setlength{\tabcolsep}{1em}
+	\def\arraystretch{1.5}
+	\begin{tabular}{l}
+		\rowcolor{tableLightGray}vorlesung \\
+		\hline
+		Java
+	\end{tabular}
+	\egroup
+}
 
 \subsubsection{SQL Injection}
 \label{sec:SQLInjection}
+
+Quelle: kaspersky \cite{sqlInjectionKaspersky}
+
+Eine SQL-Injection, manchmal abgekürzt als SQLi, ist eine Art von Sicherheitslücke, bei der ein Angreifer einen Teil des SQL-Codes verwendet, \hl{um eine Datenbank zu manipulieren und Zugriff auf potenziell wertvolle Informationen zu erhalten}. Dies ist eine der häufigsten und bedrohlichsten Angriffsarten, da sie potenziell gegen jede Webanwendung oder Webseite eingesetzt werden kann, die eine SQL-basierte Datenbank verwendet (was bei den meisten der Fall ist).
+
 
