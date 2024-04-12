@@ -172,33 +172,46 @@ Quelle: GeeksforGeeks \cite{DDLDMLDCL}
 
 Quelle: sqlshack.com \cite{crud}
 
-\paragraph{Create} refers to CREATE aka add, insert. In this operation, it is expected to insert a new record using the SQL insert statement. SQL uses \hl{INSERT INTO} statement to create new records within the table.
-
-\vspace{1em}
-
-\begin{lstlisting}[language=SQL]
-	INSERT INTO <tablename> (column1,column2,...)
-	
-	VALUES (value1,value2,...)
-\end{lstlisting}
-
-\begin{lstlisting}[language=SQL]
-	INSERT INTO dbo.Demo
-	VALUES
-	(1, 
-	'Prashanth'
-	);
-\end{lstlisting}
+\paragraph{C} refers to CREATE aka add, insert. In this operation, it is expected to insert a new record using the SQL insert statement. SQL uses \hl{INSERT INTO} statement to create new records within the table.
 
 \begin{lstlisting}[language=SQL]
 	INSERT INTO <tablename> (column1,column2,...) 
 	VALUES(value1,value2,...),( value1,value2,...), (value1,value2,...)...
 \end{lstlisting}
 
+\begin{lstlisting}[language=SQL]
+	INSERT INTO dbo.Demo
+	(id, name)
+	VALUES
+	(2, 'Jayaram'),
+	(3, 'Pravitha');
+\end{lstlisting}
 
+\paragraph{R} refers to SELECT (data retrieval) operation. The word ‘read’ retrieves data or record-set from a listed table(s). SQL uses the SELECT command to retrieve the data.
 
-\subsubsection{Subquerys}
+\begin{lstlisting}[language=SQL]
+	SELECT * FROM <TableName>;
+\end{lstlisting}
+
+\paragraph{U} refers to Update operation. Using the Update keyword, SQL brings a change to an existing record(s) of the table. When performing an update, you’ll need to define the target table and the columns that need to update along with the associated values, and you may also need to know which rows need to be updated. In general, you want to limit the number of rows in order to avoid lock escalation and concurrency issues.
+
+\begin{lstlisting}[language=SQL]
+	UPDATE <TableName>
+	SET Column1=Value1, Column2=Value2,...
+	WHERE <Expression>
+\end{lstlisting}
+
+\paragraph{D} refers to removing a record from a table. SQL uses the SQL DELETE command to delete the record(s) from the table.
+
+\begin{lstlisting}[language=SQL]
+	DELETE FROM <TableName>
+	WHERE <Expression>
+\end{lstlisting}
+
+\subsubsection{Subqueries}
 \label{sec:Subquery}
+
+
 
 \subsubsection{Aggregatfunktionen}
 \label{sec:Aggregatfunktionen}
