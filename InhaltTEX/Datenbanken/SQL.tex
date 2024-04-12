@@ -211,10 +211,12 @@ Quelle: sqlshack.com \cite{crud}
 \subsubsection{Subqueries}
 \label{sec:Subquery}
 
-
+\todo{Fehlt}
 
 \subsubsection{Aggregatfunktionen}
 \label{sec:Aggregatfunktionen}
+
+\todo{Fehlt}
 
 \subsubsection{Mengenoperationen (Schnitt-, Vereinigungs- und Differenzmenge)}
 \label{sec:Mengenoperationen}
@@ -337,5 +339,23 @@ Ergebnis:\\
 Quelle: kaspersky \cite{sqlInjectionKaspersky}
 
 Eine SQL-Injection, manchmal abgekürzt als SQLi, ist eine Art von Sicherheitslücke, bei der ein Angreifer einen Teil des SQL-Codes verwendet, \hl{um eine Datenbank zu manipulieren und Zugriff auf potenziell wertvolle Informationen zu erhalten}. Dies ist eine der häufigsten und bedrohlichsten Angriffsarten, da sie potenziell gegen jede Webanwendung oder Webseite eingesetzt werden kann, die eine SQL-basierte Datenbank verwendet (was bei den meisten der Fall ist).
+
+\vspace{1em}
+
+\textbf{Arten der SQL-Injection}
+
+\paragraph{In-band SQLi} Diese Art von SQLi-Angriff ist für Angreifer sehr einfach, da sie \hl{denselben Kommunikationskanal verwenden, um Angriffe zu starten und Ergebnisse zu sammeln}. Diese Art von SQLi-Angriff hat zwei Untervarianten:
+
+\begin{itemize}
+	\item \textbf{Fehlerbasierte SQLi:} Die Datenbank erzeugt \hl{aufgrund der Aktionen des Angreifers eine Fehlermeldung}. Anhand der von diesen Fehlermeldungen generierten Daten sammelt der Angreifer Informationen über die Datenbankinfrastruktur.
+	\item \textbf{Union-basierte SQLi:} Der Angreifer verwendet den UNION-SQL-Operator, um die gewünschten Daten zu erhalten, indem er mehrere Select-Anweisungen in einer einzigen HTTP-Antwort zusammenfasst.
+\end{itemize}
+
+\paragraph{Inferentielle SQLi (auch bekannt als Blind SQL Injection)} Bei dieser Art von SQLi nutzen Angreifer die \hl{Antwort- und Verhaltensmuster des Servers nach dem Senden von Daten-Nutzdaten}, um mehr über seine Struktur zu erfahren. Die Daten werden nicht von der Datenbank der Webseite an den Angreifer übertragen, \hl{so dass der Angreifer die Informationen über den In-Band-Angriff nicht sieht} (daher der Begriff 'blinde SQLi'). Inferentielle SQLi kann in zwei Untertypen unterteilt werden:
+
+\begin{itemize}
+	\item \textbf{Zeitbasierte SQLi:} Angreifer senden eine SQL-Abfrage an die Datenbank und lassen die Datenbank einige Sekunden warten, bevor sie die Abfrage als wahr oder falsch beantwortet.
+	\item \textbf{Boolean SQLi:} Angreifer senden eine SQL-Abfrage an die Datenbank und lassen die Anwendung daraufhin entweder ein wahres oder ein falsches Ergebnis erzeugen.
+\end{itemize}
 
 
