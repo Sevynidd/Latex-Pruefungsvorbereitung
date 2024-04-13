@@ -26,7 +26,7 @@ Weitere Vorteile:
 
 \textbf{Nachteile des PDCA-Kreises}
 
-Der große Vorteil des Demingkreises ist gleichzeitig auch ein wesentlicher Nachteil: \hl{Schnelle Problemlösungen lassen sich mit Hilfe des PDCA-Zyklus nicht umsetzen}.
+Der große Vorteil des Demingkreises ist gleichzeitig auch ein wesentlicher Nachteil: \hl{Schnelle Problemlösungen lassen sich mit Hilfe des PDCA-Zyklus \mbox{\underline{nicht}} umsetzen}.
 
 Nachteile auf einen Blick:
 
@@ -39,13 +39,24 @@ Nachteile auf einen Blick:
 \subsection{Incident Management}
 \label{sec:IncidentManagement}
 
-\todo{Fehlt}
-
 Quelle: it-processmaps.com \cite{incidentManagement}
+
+Incident Management verwaltet alle Incidents über ihren gesamten Lebenszyklus. Das primäre Ziel dieses ITIL-Prozesses besteht darin, einen IT Service für den Anwender so schnell wie möglich wieder herzustellen.
+
+ITIL unterscheidet zwischen \hl{Incidents} (Service-Unterbrechungen) und \hl{Service Requests} (d. h. Anfragen von Anwendern, die keine Service-Unterbrechungen betreffen, wie z.B. das Zurücksetzen eines Passworts). Service-Unterbrechungen werden vom Incident-Management-Prozess behandelt, während Service-Anfragen vom \hl{Request Fulfilment} bearbeitet werden.
+
+Der Incident-Management-Prozess kann auf verschiedenen Wegen angestoßen werden: Ein Anwender, Kunde oder Supplier kann eine Störung melden, technisches Personal kann einen (drohenden oder tatsächlichen) Ausfall feststellen, oder ein Incident kann automatisch von einem Event-Monitoring-System ausgelöst werden.
+
+Alle \hl{Incidents sollten in Incident Records festgehalten werden}, so dass ihr Status verfolgt und ihr vollständiger Verlauf dokumentiert werden kann. Die initiale Kategorisierung und Priorisierung der Incidents ist ein wichtiger Schritt zur Bestimmung, wie mit dem Incident verfahren wird und wieviel Zeit für dessen Lösung verfügbar ist.
+
+Falls möglich, sollten Incidents mit anderen Incidents, Problems und Known Errors verknüpft werden.
 
 \subsection{Service Level Agreement (SLA), Servicelevel 1-3}
 \label{sec:ServiceLevelAgreement}
 
+Quelle: Amazon \cite{SLAAmazon}
+
+Ein Service Level Agreement (SLA) ist ein Vertrag mit einem Outsourcing- und Technologieanbieter, in dem das \hl{Serviceniveau} festgelegt ist, das ein Anbieter dem Kunden zu liefern verspricht. Sie gibt \hl{Aufschluss über Kennzahlen wie Betriebszeit, Lieferzeit, Reaktionszeit und Lösungszeit}. In einem SLA ist auch festgelegt, was zu tun ist, wenn die Anforderungen nicht erfüllt werden, z. B. zusätzliche Unterstützung oder Preisnachlässe. SLAs werden in der Regel zwischen einem Kunden und einem Service-Anbieter vereinbart, obwohl auch Geschäftseinheiten innerhalb desselben Unternehmens untereinander SLAs abschließen können.
 
 \input{InhaltTEX/Qualitaetssicherung/Testen.tex}
 

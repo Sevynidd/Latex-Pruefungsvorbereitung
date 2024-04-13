@@ -2,7 +2,7 @@ IHK Belegsatz \cite{IHKBelegsatz}
 
 \begin{center}
 	\setlength\arrayrulewidth{1pt}
-	\begin{tabular}{|p{0.45\textwidth} | p{0.55\textwidth}|}
+	\begin{tabular}{|p{0.45\textwidth} | p{0.45\textwidth}|}
 		\hline
 		\textbf{Syntax} & \textbf{Beschreibung} \\
 		\hline
@@ -55,14 +55,14 @@ IHK Belegsatz \cite{IHKBelegsatz}
 			\hspace{1em}\textbf{FROM ...}\\
 			\hspace{1em}\textbf{WHERE ...) AS} tbl\\
 			\textbf{WHERE ...}
-		\end{tabular} & Unterabfrage (subquery), die in eine äußere Abfrage eingebettet ist. Das Ergebnis der Unterabfrage wird wie eine Tabelle - hier mit Namen "tbl" - behandelt. \\
+		\end{tabular} & Unterabfrage (subquery), die in eine äußere Abfrage eingebettet ist. Das Ergebnis der Unterabfrage wird wie eine Tabelle - hier mit Namen 'tbl' - behandelt. \\
 		\hline
 	\end{tabular}
 \end{center}
 
 \begin{center}
 	\setlength\arrayrulewidth{1pt}
-	\begin{tabular}{|p{0.45\textwidth} | p{0.55\textwidth}|}
+	\begin{tabular}{|p{0.45\textwidth} | p{0.45\textwidth}|}
 		\hline
 		SELECT \textbf{DISTINCT} & Eliminiert Redundanzen, die in einer Tabelle auftreten können. Werte werden jeweils nur einmal angezeigt.\\
 		\hline
@@ -84,8 +84,10 @@ IHK Belegsatz \cite{IHKBelegsatz}
 			\textbf{WHERE NOT ... IN} (subquery)
 		\end{tabular} & 
 		\begin{tabular}[t]{l}
-			Der Wert des Datenfelds ist in der ausgewählten Menge \\vorhanden.\\
-			Der Wert des Datenfelds ist in der ausgewählten Menge \\nicht vorhanden.
+			Der Wert des Datenfelds ist in der \\
+			ausgewählten Menge vorhanden.\\
+			Der Wert des Datenfelds ist in der \\
+			ausgewählten Menge nicht vorhanden.
 		\end{tabular}\\
 		\hline
 		\textbf{GROUP BY} Spaltenname1 [, Spaltenname2, ...] & Gruppierung (Aggregation) nach Inhalt des genannten Feldes\\
@@ -109,36 +111,44 @@ IHK Belegsatz \cite{IHKBelegsatz}
 		\hline
 		\rowcolor{tableLightGray} \textit{Berechtigungen kontrollieren} & \\
 		\hline
-		\textbf{CREATE} Benutzer | Rolle \textbf{IDENTIFIED BY} 'Passwort' & Erzeugt einen neune Benutzer oder eine neue Rolle mit einem Passwort\\
+		\begin{tabular}[t]{l}
+				\textbf{CREATE} Benutzer | Rolle \textbf{IDENTIFIED BY}\\ 'Passwort'
+		\end{tabular} & 
+		\begin{tabular}[t]{l}
+			Erzeugt einen neuen Benutzer oder eine \\ 
+			neue Rolle mit einem Passwort
+		\end{tabular}\\
 		\hline		
+	\end{tabular}
+\end{center}
+
+\begin{center}
+	\setlength\arrayrulewidth{1pt}
+	\begin{tabular}{|p{0.45\textwidth} | p{0.45\textwidth}|}
+		\hline
 		\begin{tabular}[t]{l}
 			\textbf{GRANT} Recht | Rolle \textbf{ON} *.* | Datenbank.* | \\
 			Datenbank.Objekt\\
 			\textbf{TO} Benutzer | Rolle [WITH GRANT OPTION]
 		\end{tabular} & 
 		\begin{tabular}[t]{l}
-			Weist einem Benutzer oder einer Rolle ein Recht auf ein \\
+			Weist einem Benutzer oder einer Rolle ein \\
+			Recht auf ein
 			bestimmtes Datenbank-Objekt\\
 			Weist einem Benutzer eine Rolle zu
 		\end{tabular}\\
 		\hline
 		\begin{tabular}[t]{l}
-			\textbf{REVOKE} Recht | Rolle \textbf{ON} *.* | Datenbank.* | \\
+			\textbf{REVOKE} Recht | Rolle \textbf{ON} *.* | Datenbank.* |\\
 			Datenbank.Objekt\\
 			\textbf{FROM} Benutzer | Rolle
 		\end{tabular} & 
 		\begin{tabular}[t]{l}
-			Entzieht einem Benutzer oder einer Rolle ein Recht auf ein \\
+			Entzieht einem Benutzer oder einer Rolle ein \\
+			Recht auf ein
 			bestimmtes Datenbank-Objekt\\
 			Entzieht einem Benutzer eine Rolle
 		\end{tabular}\\
-		\hline
-	\end{tabular}
-\end{center}
-
-\begin{center}
-	\setlength\arrayrulewidth{1pt}
-	\begin{tabular}{|p{0.45\textwidth} | p{0.55\textwidth}|}
 		\hline
 		\rowcolor{tableLightGray} \textit{Aggregatfunktionen} & \\
 		\hline
@@ -177,6 +187,13 @@ IHK Belegsatz \cite{IHKBelegsatz}
 		\textbf{DATEADD} (Datumsteil, Intervall, Datum) & Fügt einem Datum ein Intervall (ausgefrückt in den unter Datumsteil angegebenen Einheiten) hinzu\\
 		\hline
 		\textbf{DATEDIFF} (Datumsteil, Anfangsdatum, Enddatum) Datumsteile: \textbf{DAY, MONTH, YEAR} & Liefert Enddatum-Startdatum (ausgedrückt in den unter Datumsteil angegebenen Einheiten)\\
+		\hline
+	\end{tabular}
+\end{center}
+
+\begin{center}
+	\setlength\arrayrulewidth{1pt}
+	\begin{tabular}{|p{0.45\textwidth} | p{0.45\textwidth}|}
 		\hline
 		\rowcolor{tableLightGray} \textit{Operatoren} & \\
 		\hline
