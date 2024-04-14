@@ -3,17 +3,48 @@
 \subsection{Versionsverwaltung}
 \label{sec:Versionsverwaltung} 
 
+Quelle: Atlassian \cite{gitCommands}
 
+\textbf{git commands}
 
-\begin{itemize}
-	\item Werkzeuge zur Versionsverwaltung einsetzen
-	\item Eigenschaften eines Versionsverwaltungssystems beschreiben
-	\begin{itemize}
-		\item SVN, CVS, TFS mit Source Safe, Git
-		\item VCS vs. DVCS
-	\end{itemize}
-	\item Nutzen und Anwenden einschlägiger Systeme, z.B. Git
-	\item Funktionen, z.B. Commit, Revert, Branch, Merge, Cherry-Pick, \item Pull/Push, Rebase
-	\item Übliche Workflows im Team, z.B. Pull/Merge Requests
-\end{itemize}
+\begin{center}
+	\setlength\arrayrulewidth{1pt}
+	\begin{tabular}{|p{0.2\textwidth} | p{0.7\textwidth}|}
+		\hline
+		\textbf{git add} & Verschiebt Änderungen aus dem Arbeitsverzeichnis in die Staging-Umgebung. Auf diese Weise kannst du einen Snapshot vorbereiten, bevor du an den offiziellen Verlauf committest.\\
+		\hline
+		\textbf{git branch} & Dieser Befehl ist dein Allzwecktool zur Branch-Administration. Damit kannst du isolierte Entwicklungsumgebungen innerhalb eines einzigen Repositorys erstellen.\\
+		\hline
+		\textbf{git checkout} & Neben dem Auschecken alter Commits und alter Dateiüberarbeitungen kannst du mit 'git checkout' auch zwischen bestehenden Branches navigieren. In Kombination mit den grundlegenden Git-Befehlen kann dadurch in einer bestimmten Entwicklungslinie gearbeitet werden.\\
+		\hline
+		\textbf{git clone} & Erstellt eine Kopie eines bestehenden Git-Repositorys. Klonen ist für Entwickler die gängigste Art, eine Arbeitskopie eines zentralen Repositorys zu erhalten.\\
+		\hline
+		\textbf{Git commit} & Committet den Snapshot aus der Staging-Umgebung in den Projektverlauf. Zusammen mit 'git add' bildet er den grundlegenden Workflow für alle Git-Benutzer.\\
+		\hline
+		\textbf{git fetch} & Mit 'git fetch' wird ein Branch von einem anderen Repository zusammen mit allen zugehörigen Commits und Dateien heruntergeladen. Dabei wird jedoch nichts in dein lokales Repository integriert. Auf diese Weise hast du die Möglichkeit, Änderungen vor dem Merge in dein Projekt noch zu überprüfen.\\
+		\hline
+		\textbf{git init} & Initialisiert ein neues Git-Repository. Wenn du für ein Projekt eine Versionskontrolle einrichten möchtest, ist dies der erste Befehl, den du kennen musst.\\
+		\hline
+		\textbf{git log} & Damit kannst du ältere Überarbeitungen eines Projekts ansehen. Der Befehl bietet mehrere Formatierungsoptionen zur Anzeige committeter Snapshots.\\
+		\hline
+		\textbf{git merge} & Eine leistungsstarke Option zur Integration von Änderungen von voneinander abweichenden Branches. Nach dem Forken des Projektverlaufs mit 'git branch', kann diese mit 'git merge' wieder zusammengeführt werden.\\
+		\hline
+		\textbf{git pull} & Pulls sind die automatisierte Version von git fetch. Dabei wird ein Branch von einem Remote-Repository heruntergeladen und dann direkt in den aktuellen Branch gemergt. Dies ist das Git-Äquivalent von svn update.\\
+		\hline
+	\end{tabular}
+\end{center}
 
+\begin{center}
+	\setlength\arrayrulewidth{1pt}
+	\begin{tabular}{|p{0.2\textwidth} | p{0.7\textwidth}|}
+		\hline
+		\textbf{git push} & 'git push' ist das Gegenteil von 'git fetch' (mit ein paar Einschränkungen). Du kannst mit diesem Befehl einen lokalen Branch in ein anderes Repository verschieben, was eine bequeme Methode zur Veröffentlichung von Beiträgen ist. Dies ist wie 'svn commit', aber hierbei wird eine Reihe von Commits statt eines einzigen Changesets gesendet.\\
+		\hline
+		\textbf{git rebase} & Mit Rebasing kannst du Branches verschieben, um unnötige Merge-Commits zu vermeiden. Der daraus resultierende lineare Verlauf ist oft leichter zu verstehen und zu durchsuchen.\\
+		\hline
+		\textbf{git revert} & Macht einen committeten Snapshot rückgängig. Wenn du einen fehlerhaften Commit entdeckst, kannst du ihn mit 'git revert' sicher und einfach von der Codebasis entfernen.\\
+		\hline
+		\textbf{git status} & Gibt den Status des Arbeitsverzeichnisses und den Status des Snapshots in der Staging-Umgebung zurück. Diesen Befehl solltest du zusammen mit 'git add' und 'git commit' ausführen, um genau zu sehen, was im nächsten Snapshot enthalten sein wird.\\
+		\hline
+	\end{tabular}
+\end{center}
