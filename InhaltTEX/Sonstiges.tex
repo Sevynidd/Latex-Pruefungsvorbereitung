@@ -1,0 +1,56 @@
+\section{Sonstiges}
+\label{sec:Sonstiges}
+
+\subsection{Umrechung von Datengrößen}
+\label{sec:Datengroessen}
+
+\begin{center}
+	\begin{tikzpicture}[align=center, 
+		node distance= 1cm,
+		node/.style={rectangle, inner sep=10, draw}]
+		
+		\node (B) [node] {B};
+	
+		\node (kB10) [node, above right=of B]{kB\\$10^{3}$};
+		\node (MB10) [node, right=of kB10] {MB\\$10^{6}$};
+		\draw[->] (kB10) to [out=80, in=100] node[above] {$:10^{3}$} (MB10);
+		\draw[->] (MB10) to [out=250, in=290] node[below] {$*10^{3}$} (kB10);
+		\node (GB10) [node, right=of MB10] {GB\\$10^{9}$};
+		\draw[->] (MB10) to [out=80, in=100] node[above] {$:10^{3}$} (GB10);
+		\draw[->] (GB10) to [out=250, in=290] node[below] {$*10^{3}$} (MB10);
+		\node (TB10) [node, right=of GB10] {TB\\$10^{12}$};
+		\draw[->] (GB10) to [out=80, in=100] node[above] {$:10^{3}$} (TB10);
+		\draw[->] (TB10) to [out=250, in=290] node[below] {$*10^{3}$} (GB10);
+		\node (PB10) [node, right=of TB10] {PB\\$10^{15}$};
+		\draw[->] (TB10) to [out=80, in=100] node[above] {$:10^{3}$} (PB10);
+		\draw[->] (PB10) to [out=250, in=290] node[below] {$*10^{3}$} (TB10);
+		
+		\node (KiB2) [node, below right=of B]{KiB\\$2^{10}$};
+		\node (MiB2) [node, right=of KiB2] {MiB\\$2^{20}$};
+		\draw[->] (KiB2) to [out=80, in=100] node[above] {$:2^{10}$} (MiB2);
+		\draw[->] (MiB2) to [out=250, in=290] node[below] {$*2^{10}$} (KiB2);
+		\node (GiB2) [node, right=of MiB2] {GiB\\$2^{30}$};
+		\draw[->] (MiB2) to [out=80, in=100] node[above] {$:2^{10}$} (GiB2);
+		\draw[->] (GiB2) to [out=250, in=290] node[below] {$*2^{10}$} (MiB2);
+		\node (TiB2) [node, right=of GiB2] {TiB\\$2^{40}$};
+		\draw[->] (GiB2) to [out=80, in=100] node[above] {$:2^{10}$} (TiB2);
+		\draw[->] (TiB2) to [out=250, in=290] node[below] {$*2^{10}$} (GiB2);
+		\node (PiB2) [node, right=of TiB2] {PiB\\$2^{50}$};
+		\draw[->] (TiB2) to [out=80, in=100] node[above] {$:2^{10}$} (PiB2);
+		\draw[->] (PiB2) to [out=250, in=290] node[below] {$*2^{10}$} (TiB2);
+	\end{tikzpicture}
+\end{center}
+
+\begin{center}
+	\begin{tikzpicture}[align=center, 
+		node distance= 2cm,
+		node/.style={rectangle, inner sep=10, draw}]
+		
+		\node (Byte)[node] {Byte};
+		\node (Bit) [node, right=of Byte]{Bit};
+		
+		\draw[->] (Byte) to [out=80, in=100] node[above] {$*8$} (Bit);
+		\draw[->] (Bit) to [out=250, in=290] node[below] {$:8$} (Byte);
+		
+	\end{tikzpicture}
+\end{center}
