@@ -7,7 +7,7 @@
 \subsubsection{Vertraulichkeit, Integrität, Verfügbarkeit (C.I.A Prinzip)}
 \label{sec:VertraulichkeitIntegritaetVerfuegbarkeit}
 
-Quelle: Enginsight \cite{ciaPrinzip}
+\quelle{Enginsight}{ciaPrinzip}
 
 \paragraph{Vertraulichkeit} Ein System liefert Vertraulichkeit, wenn niemand unautorisiert Informationen gewinnen kann.
 
@@ -20,7 +20,7 @@ Quelle: Enginsight \cite{ciaPrinzip}
 \subsubsection{USV (Unterbrechungsfreie Stromversorgung)}
 \label{sec:USV}
 
-Quelle: hagel-it \cite{USV}
+\quelle{hagel-it}{USV}
 
 \textbf{Was ist eine USV?}
 
@@ -29,7 +29,7 @@ Viele Geräte, wie Server und Router müssen hoch verfügbar sein, um z.B. das I
 \subsubsection{Firewall}
 \label{sec:Firewall}
 
-Quelle: cisco \cite{Firewall}
+\quelle{cisco}{Firewall}
 
 Eine Firewall ist eine Netzwerksicherheitsvorrichtung, die eingehenden und ausgehenden Netzwerkverkehr überwacht und auf Grundlage einer Reihe von definierten Sicherheitsregeln entscheidet, ob bestimmter Datenverkehr zugelassen oder blockiert wird.
 
@@ -70,15 +70,82 @@ Quelle: BSI \cite{BSISchutzbedarf}
 \subsubsection{Begriffe zu Hacking}
 \label{sec:Hackingbegriffe}
 
-\begin{itemize}
-	\item Begriffe kennen/erläutern
-	\begin{itemize}
-		\item Hacker (White Hat, Black Hat), Cracker, Script-Kiddies
-		\item Spam, Phishing, Sniffing, Spoofing, Man-in-the-Middle
-		\item SQL-Injection siehe \referenz{sec:SQLInjection}, Session Hijacking, DoS, DDoS
-		\item Viren, Würmer, Trojaner, Keylogger, Botnetze, Spyware, Adware, Ransomware
-		\item Backdoor, Exploit, Rootkit
-		\item Verbreitung von Viren/Würmer/Trojaner erläutern
-	\end{itemize}
-	
-\end{itemize}
+\quelle{Buch zu Hacking von mitp}{BuchHacking}
+
+\subsubsection{Hacker}
+\label{sec:Hacker}
+
+\paragraph{Scriptkiddies} Sie haben wenig Grundwissen und versuchen, mithilfe von Tools in fremde Systeme einzudringen. Dabei sind diese Tools meist sehr einfach über eine Oberfläche zu bedienen. Die Motivation ist meistens Spaß und die Absichten sind oft krimineller Natur. Oftmals möchten Scriptkiddies mit ihren Aktionen Unruhe stiften. Die Angriffe sind meist ohne System und Strategie. Viele Hacker starten ihre Karriere als Scriptkiddie, nutzen die Tools zunächst mit wenig Erfahrung, lernen aus dem Probieren, entwickeln sich weiter und finden dadurch einen Einstieg in die Szene.
+
+\paragraph{Black Hats} Diese Gattung Hacker beschreibt am ehesten die Hacker, die man aus den Medien kennt. Hier redet man von Hackern mit bösen Absichten. Sie haben sehr gute Kenntnisse und greifen bewusst und strukturiert Unternehmen, Organisationen oder Einzelpersonen an, um diesen Schaden zuzufügen. Die Ziele der Black Hats sind vielfältig und reichen vom einfachen Zerstören von Daten bis hin zum Diebstahl von wertvollen Informationen, wie Kontodaten oder Unternehmensgeheimnissen. In manchen Fälle reicht es den Black Hats auch, wenn sie erfolgreich die Server ihres Opfers lahmlegen und damit Sabotage verüben.
+
+\paragraph{White Hats} Einen \textit{White Hat Hacker} nennt man oft auch einen \textit{Ethical Hacker}. Er nutzt das Wissen und die Tools eines Hackers, um zu verstehen, wie Black Hats bei ihren Angriffen vorgehen. Im Gegensatz zum Black Hat will der White Hat jedoch die betreffenden Systeme letztlich vor Angriffen besser schützen und testet daher die Schwachstellen aktiv aus. Damit hat ein White Hat Hacker grundsätzlich keine bösen Absichten, im Gegenteil, er unterstützt die Security-Verantwortlichen der jeweiligen Organisation. White Hat Hacker oder Ethical Hacker versuchen im Anschluss an ihre Hacking-Tätigkeit herauszufinden, welche Sicherheitslücken es gibt und geben eine Anleitung dazu, diese möglichst effizient zu schließen.
+
+\subsubsection{Cracker}
+\label{sec:Cracker}
+
+\subsubsection{Spam}
+\label{sec:Spam}
+
+\subsubsection{Phishing}
+\label{sec:Phishing}
+
+\subsubsection{Sniffing}
+\label{sec:Sniffing}
+
+\subsubsection{Spoofing}
+\label{sec:Spoofing}
+
+\subsubsection{Man-in-the-Middle}
+\label{sec:ManInTheMiddle}
+
+\subsubsection{SQL-Injection}
+\referenz{sec:SQLInjection}
+
+\subsubsection{Session Hijacking}
+\label{sec:SessionHijacking}
+
+\subsubsection{DoS, DDoS}
+\label{sec:DoSDDoS}
+
+\subsubsection{Viren}
+\label{sec:Viren}
+
+\subsubsection{Würmer}
+\label{sec:Wuermer}
+
+\subsubsection{Trojaner}
+\label{sec:Trojaner}
+
+\subsubsection{Keylogger}
+\label{sec:Keylogger}
+
+\subsubsection{Botnetze}
+\label{sec:Botnetze}
+
+\subsubsection{Spyware}
+\label{sec:Spyware}
+
+\subsubsection{Adware}
+\label{sec:Adware}
+
+\subsubsection{Kryptotrojaner \& Ransomware}
+\label{sec:Ransomware}
+
+Kryptografie soll die Sicherheit erhöhen. Dank ausgeklügelter, komplexer mathematischer Verfahren und Algorithmen gelingt dies in der Regel sehr effektiv und für die >>bösen Jungs<< ist es teilweise sehr schwierig bis unmöglich, kryptografisch gesicherte Daten und Datenströme zu knacken bzw. zu entschlüsseln. Umso perfider wird es, wenn diese Technologien gegen uns verwendet werden. So geschehen bei den sogenannten \textit{Kryptotrojanern} bzw. der gefürchteten \textit{Ransomware}.
+
+Hinter Kryptotrojanern steckt sehr viel kriminelle Energie, denn die Angreifer wollen in fast allen Fällen Geld ergaunern. Die Schädlinge verschlüsseln persönliche Daten auf dem System des Opfers so, dass sie für den Eigentümer unbrauchbar sind. Es gibt auch Varianten, die den Zugriff auf das komplette System blockieren. Erst gegen Bezahlung eines Lösegeldes (engl. \textit{Ransom}) werden die Dateien entschlüsselt und damit wieder verfügbar gemacht. Nachdem das Opfer über eine anonyme Zahlungsmethode, wie zum Beispiel die Kryptowährung \textit{Bitcoin}, das Lösegeld bezahlt hat, ist natürlich nicht gewährleistet, dass die Daten tatsächlich wieder freigegeben werden!
+
+\subsubsection{Backdoor}
+\label{sec:Backdoor}
+
+
+
+\subsubsection{Exploit}
+\label{sec:Exploit}
+
+\subsubsection{Rootkit}
+\label{sec:Rootkit}
+
+\subsubsection{Verbreitung von Viren/Würmern/Trojanern}
+\label{sec:VerbreitungVirenWuermerTrojaner}
