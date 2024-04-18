@@ -4,21 +4,80 @@
 \subsection{Datensicherheit}
 \label{sec:Datensicherheit}
 
-\todo{Fehlt}
+\subsubsection{Vertraulichkeit, Integrität, Verfügbarkeit (C.I.A Prinzip)}
+\label{sec:VertraulichkeitIntegritaetVerfuegbarkeit}
+
+Quelle: Enginsight \cite{ciaPrinzip}
+
+\paragraph{Vertraulichkeit} Ein System liefert Vertraulichkeit, wenn niemand unautorisiert Informationen gewinnen kann.
+
+\paragraph{Integrität} Ein System gewährleistet die Integrität, wenn es nicht möglich ist, zu schützende Daten unautorisiert und unbemerkt zu verändern.
+
+\paragraph{Verfügbarkeit} Ein System gewährt Verfügbarkeit, wenn authentifizierte und autorisierte Subjekte in der Wahrnehmung ihrer Berechtigungen nicht unautorisiert beeinträchtigt werden können.
+
+\clearpage
+
+\subsubsection{USV (Unterbrechungsfreie Stromversorgung)}
+\label{sec:USV}
+
+Quelle: hagel-it \cite{USV}
+
+\textbf{Was ist eine USV?}
+
+Viele Geräte, wie Server und Router müssen hoch verfügbar sein, um z.B. das Internet am Laufen zu halten. Nicht nur Hard- und Software Probleme, sondern auch die Stromversorgung bildet eine Sicherheitslücke. Daher werden meist sensible IT-Systeme mit einer USV (unterbrechungsfreie Stromversorgung) ausgestattet. Denn im Falle eines Netzausfalls möchte vermieden werden, dass beispielsweise dem Server plötzlich der Strom fehlt und ausgeschaltet wird. Viel mehr möchte man erreichen, dass der Server in diesem Fall sauber und ordentlich herunterfährt.
+
+\subsubsection{Firewall}
+\label{sec:Firewall}
+
+Quelle: cisco \cite{Firewall}
+
+Eine Firewall ist eine Netzwerksicherheitsvorrichtung, die eingehenden und ausgehenden Netzwerkverkehr überwacht und auf Grundlage einer Reihe von definierten Sicherheitsregeln entscheidet, ob bestimmter Datenverkehr zugelassen oder blockiert wird.
+
+Firewalls bilden bereits seit über 25 Jahren die erste Verteidigungslinie beim Schutz von Netzwerken. Sie fungieren als Barriere zwischen geschützten und kontrollierten Bereichen des internen, vertrauenswürdigen Netzwerks und nicht vertrauenswürdigen, äußeren Netzwerken wie dem Internet. 
+
+Eine Firewall kann Hardware, Software, Software-as-a-Service (SaaS), eine Public Cloud oder eine Private Cloud (virtuell) sein.
+
+\clearpage
+
+\subsubsection{Schutzbedarfskategorien}
+\label{sec:Schutzbedarf}
+
+Quelle: BSI \cite{BSISchutzbedarf}
+
+\paragraph{Beispiel} Für das Beispielunternehmen, die RECPLAST GmbH, wurde bezüglich der Schadensszenarien „finanzielle Auswirkungen“ und „Beeinträchtigung der Aufgabenerfüllung“ folgendes festgelegt:
+
+{\sethlcolor{green}\hl{Normaler Schutzbedarf:}}
 
 \begin{itemize}
-	\item Datensicherheit (Authentifizierung, Autorisierung, Verschlüsselung)
-	\item Bedrohungsszenarien erkennen und Schadenspotenziale unter Berücksichtigung wirtschaftlicher und technischer Kriterien einschätzen
-	\item Für jede Anwendung, die verwendeten IT-Systeme und die verarbeiteten Informationen gilt: Betrachtung zu erwartender Schäden, die bei einer Beeinträchtigung von Vertraulichkeit, Integrität oder Verfügbarkeit entstehen könnten
-	\item geeignete Gegenmaßnahmen, z.B. USV-Anlagen, Klimageräte, Firewalls
-	\item Einteilung in die drei Schutzbedarfskategorien „normal“, „hoch“ und „sehr hoch“ (analog IT-Grundschutz des BSI)
+	\item „Der mögliche finanzielle Schaden ist kleiner als 50.000 Euro.“
+	\item „Die Abläufe bei RECPLAST werden allenfalls unerheblich beeinträchtigt. Ausfallzeiten von mehr als 24 Stunden können hingenommen werden.“
+\end{itemize}
+
+{\sethlcolor{yellow}\hl{Hoher Schutzbedarf:}}
+
+\begin{itemize}
+	\item „Der mögliche finanzielle Schaden liegt zwischen 50.000 und 500.000 Euro.“
+	\item „Die Abläufe bei RECPLAST werden erheblich beeinträchtigt. Ausfallzeiten dürfen maximal 24 Stunden betragen.“
+\end{itemize}
+
+{\sethlcolor{red}\hl{Sehr hoher Schutzbedarf:}}
+
+\begin{itemize}
+	\item „Der mögliche finanzielle Schaden liegt über 500.000 Euro.“
+	\item „Die Abläufe bei RECPLAST werden so stark beeinträchtigt, dass Ausfallzeiten, die über zwei Stunden hinausgehen, nicht toleriert werden können.“
+\end{itemize}
+
+\subsubsection{Begriffe zu Hacking}
+\label{sec:Hackingbegriffe}
+
+\begin{itemize}
 	\item Begriffe kennen/erläutern
 	\begin{itemize}
 		\item Hacker (White Hat, Black Hat), Cracker, Script-Kiddies
 		\item Spam, Phishing, Sniffing, Spoofing, Man-in-the-Middle
-		\item SQL-Injection, XSS, CSRF, Session Hijacking, DoS, DDoS
-		\item Viren, Würmer, Trojaner, Hoax, Dialer (veraltet), Keylogger, Botnetze, Spyware, Adware, Ransomware, Scareware
-		\item Backdoor, Exploit, 0-Day-Exploit, Rootkit
+		\item SQL-Injection siehe \referenz{sec:SQLInjection}, Session Hijacking, DoS, DDoS
+		\item Viren, Würmer, Trojaner, Keylogger, Botnetze, Spyware, Adware, Ransomware
+		\item Backdoor, Exploit, Rootkit
 		\item Verbreitung von Viren/Würmer/Trojaner erläutern
 	\end{itemize}
 	

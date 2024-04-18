@@ -38,6 +38,12 @@
 		\node (PiB2) [node, right=of TiB2] {PiB\\$2^{50}$};
 		\draw[->] (TiB2) to [out=80, in=100] node[above] {$:2^{10}$} (PiB2);
 		\draw[->] (PiB2) to [out=250, in=290] node[below] {$*2^{10}$} (TiB2);
+		
+		\draw[->] (B) to [out=120, in=150] node[above left] {$:10^{3}$} (kB10);
+		\draw[->] (kB10) to [out=250, in=10] node[above left] {$*10^{3}$} (B);
+		
+		\draw[->] (B) to [out=340, in=100] node[below left]{$:2^{10}$} (KiB2);
+		\draw[->] (KiB2) to [out=200, in=250] node[below left] {$*2^{10}$} (B);
 	\end{tikzpicture}
 \end{center}
 
@@ -60,3 +66,4 @@
 \label{sec:Bildgroesse}
 
 Farbtiefe, RGB, Pixel, DPI, etc.
+
