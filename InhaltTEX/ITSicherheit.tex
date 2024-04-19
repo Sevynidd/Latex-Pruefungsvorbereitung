@@ -90,9 +90,6 @@ Quelle: BSI \cite{BSISchutzbedarf}
 \subsubsection{Phishing}
 \label{sec:Phishing}
 
-\subsubsection{Sniffing}
-\label{sec:Sniffing}
-
 \subsubsection{Spoofing}
 \label{sec:Spoofing}
 
@@ -111,20 +108,42 @@ Quelle: BSI \cite{BSISchutzbedarf}
 \subsubsection{Viren}
 \label{sec:Viren}
 
+Der oder das Computervirus (beides ist mittlerweile statthaft) ist klassischerweise ein Programm, das sich selbst verbreitet, indem es sich in ein anderes programm, den Wirt, einschleust. Im Gegensatz zu Trojanern oder Würmern benötigen Viren also einen Wirt und können sich nicht selbstständig fortpflanzen.
+
+In dem Moment, in dem das Wirtsprogramm ausgeführt wird, kann auch der Virus aktiv werden und seine Payload ausführen. Zur Replikation führt der Virus immer einen Prozess aus, der es ihm ermöglicht, sich an einen neuen Wirt zu hängen, um sich weiterzuverbreiten.
+
 \subsubsection{Würmer}
 \label{sec:Wuermer}
+
+Würmer können sich - im Gegensatz zu Viren - selbstständig und ohne Wirt vermehren. Sie verbreiten sich über Netzwerke oder Wechselmedien, wie USB-Sticks. Dadurch können sie sich höchst effektiv replizieren und verbreiten.
+
+Ebenso wie Trojaner und Viren können auch Würmer einen Schadcode ausführen.
 
 \subsubsection{Trojaner}
 \label{sec:Trojaner}
 
-\subsubsection{Keylogger}
-\label{sec:Keylogger}
+Die Trojaner werden als harmloses Programm getrarnt, enthalten aber Schadcode, der im Hintergrund ohne Wissen des Anwenders ausgeführt wird. Trojaner sind die flexibelste und die am weitesten verbreitete Form von Malware. Im Grunde genommen ist ein Trojaner nur eine Tarnung für eine beliebige weitere Malware-Funktion wie z.B. Installation von:
+
+\begin{multicols}{2}
+	\begin{itemize}
+		\item Backdoors
+		\item Keylogger
+		\item Ransomware
+		\item Sniffer
+		\item Bots für ein Botnet
+		\item und so weiter
+	\end{itemize}
+\end{multicols}
+
+\subsubsection{Sniffer, Spyware und Keylogger}
+\label{sec:SnifferSpywareKeylogger}
+
+Zahlreiche Schadprogramme versuchen, den Anwender auszuspionieren, und senden die Daten anschließend an vordefinierte Zielsysteme im Internet. Die Spionagetätigkeiten können diverse Aspekte und Komponenten umfassen. Angefangen von Daten wie Browser-Verlauf und anderen Zugriffsverläufen (\textit{Most Recently Used}, MRU) über das Mitschneiden des Netzwerk-Traffics oder Aktivieren von Mikrofon und Webcam bis hin zum Protokollieren jedes einzelnen Tastenanschlags mittels Keylogger kann ein Angreifer umfassende Daten über das Opfer sammeln.
 
 \subsubsection{Botnetze}
 \label{sec:Botnetze}
 
-\subsubsection{Spyware}
-\label{sec:Spyware}
+Ein \textit{Botnet} besteht aus zahlreichen \textit{Bots}, also einem Stückchen Software, das sich im Opfer-System eingenistet hat und bereit ist, vom Command \& Control-Server aus dem Internet Befehle zu empfangen. Bots könenn diverse Funktionen erfüllen - angefangen vom Spamversand über Spyware-Funktionen bis hin zu gezielten und konzentrierten \textit{Distributed-Denial-of-Service-Angriffen}.
 
 \subsubsection{Adware}
 \label{sec:Adware}
@@ -141,11 +160,16 @@ Hinter Kryptotrojanern steckt sehr viel kriminelle Energie, denn die Angreifer w
 
 Eine >>Backdoor<<, oder deutsch: >>Hintertür<<, bezeichnet ganz allgemein einen Zugang zu einem System unter Umgehung der Zugriffsschutzmaßnahmen. Der Zweck einer Backdoor besteht in der Regel darin, einem nicht authentisierten und autorisierten Benutzer einen jederzeit verfügbaren Zugriff zum Zielsystem bereitzustellen. Dies impliziert, dass dieser Zugang den autorisierten Benutzern meistens nicht bekannt ist bzw. sein soll.
 
+
 \subsubsection{Exploit}
 \label{sec:Exploit}
+
+Ein \textit{Exploit} ist ein Prozess, mit dem Sie eine Schwachstelle ausnutzen können. Doch was bedeutet >>ausnutzen<< eigentlich? Das hängt ganz von der Schwachstelle und vom Exploit ab. In unserem Fall geht es darum, eine \textit{Remote-Shell} bereitzustellen - egal ob Bind- oder Reverse-Shell. Diese Shell ist die \textit{Payload} des Exploits. Durch die Schwachstelle wird z.B. die Ausführung beliebiger Kommandos möglich. Der Exploit setzt dies technisch um. Die Payload stellt dann genau diese Befehle dar, mit denen der Angreifer Zugriff auf das System erlangt.
 
 \subsubsection{Rootkit}
 \label{sec:Rootkit}
 
 \subsubsection{Verbreitung von Viren/Würmern/Trojanern}
 \label{sec:VerbreitungVirenWuermerTrojaner}
+
+
