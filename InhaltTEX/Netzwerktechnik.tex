@@ -67,6 +67,56 @@ Routing bezieht sich auf den Prozess der Weiterleitung von Datenpaketen zwischen
 
 Switching ist der Prozess des Weiterleitens von Datenpaketen innerhalb eines lokalen Netzwerks. Im Gegensatz zu Routern, die Daten zwischen verschiedenen Netzwerken weiterleiten, arbeiten Switches auf der Ebene des lokalen Netzwerks und verbinden verschiedene Geräte innerhalb desselben Netzwerks miteinander. Switches verwenden MAC-Adressen, um Datenpakete an das richtige Zielgerät innerhalb des Netzwerks zu senden, was zu einer effizienten Datenübertragung und -kommunikation in lokalen Netzwerken führt.
 
-\paragraph{Test}TEST
+\subsection{DNS, DHCP}
+
+\paragraph{DNS}
+
+DNS (Domain Name System) ist ein hierarchisches und verteiltes System zur Auflösung von Domainnamen in IP-Adressen und umgekehrt. Es ermöglicht die Verwendung von leicht zu merkenden Domainnamen, wie z.B. 'example.com', anstelle von IP-Adressen, wie z.B. '192.0.2.1', um auf Websites, Server und andere Ressourcen im Internet zuzugreifen. DNS funktioniert, indem es Anfragen von Clients entgegennimmt und diese Anfragen an DNS-Server weiterleitet, die die entsprechenden IP-Adressen zurückgeben.
+
+\paragraph{DHCP}
+
+DHCP (Dynamic Host Configuration Protocol) ist ein Netzwerkprotokoll, das automatisch IP-Adressen, Subnetzmasken, Standard-Gateways und andere Netzwerkkonfigurationen an Geräte in einem Netzwerk verteilt. DHCP ermöglicht es, dass Geräte, die sich in einem Netzwerk anmelden, automatisch eine IP-Adresse und andere Netzwerkkonfigurationen erhalten, ohne dass der Netzwerkadministrator manuell jeden Client konfigurieren muss. Dies erleichtert die Verwaltung von IP-Adressen in einem Netzwerk und reduziert potenzielle Konflikte.
+
+\subsection{TCP/UDP}
+
+\paragraph{TCP}
+
+TCP (Transmission Control Protocol) ist ein zuverlässiges, verbindungsorientiertes Protokoll, das für die Übertragung von Daten über Netzwerke verwendet wird. Es gewährleistet die zuverlässige und geordnete Zustellung von Datenpaketen, indem es Bestätigungen für den Erhalt von Datenpaketen verwendet und bei Bedarf fehlende Pakete erneut sendet. TCP wird häufig für Anwendungen verwendet, bei denen eine fehlerfreie und vollständige Übertragung von Daten erforderlich ist, wie z.B. beim Abrufen von Webseiten, dem Senden von E-Mails oder dem Herunterladen von Dateien.
+
+\paragraph{UDP}
+
+UDP (User Datagram Protocol) ist ein unzuverlässiges, verbindungsloses Protokoll, das für die Übertragung von Daten über Netzwerke verwendet wird. Im Gegensatz zu TCP bietet UDP keine Garantie für die zuverlässige Zustellung von Daten oder die Beibehaltung der Reihenfolge. UDP wird häufig für Anwendungen verwendet, bei denen eine niedrige Latenz und eine schnelle Datenübertragung wichtiger sind als die Zuverlässigkeit, wie z.B. bei Voice-over-IP (VoIP), Videostreaming und Online-Spielen.
+
+\subsection{HTTPS, TLS/SSL, IPsec}
+
+\paragraph{HTTPS}
+
+HTTPS (Hypertext Transfer Protocol Secure) ist ein Protokoll zur sicheren Übertragung von Daten über das Internet. Es basiert auf dem HTTP-Protokoll, verwendet jedoch zusätzliche Verschlüsselungsschichten, um die Vertraulichkeit und Integrität der übertragenen Daten zu gewährleisten. HTTPS wird häufig für die sichere Übertragung von sensiblen Daten wie Login-Informationen, Kreditkartendaten und persönlichen Informationen auf Websites verwendet. Es verwendet SSL (Secure Sockets Layer) oder TLS (Transport Layer Security) zur Verschlüsselung der Datenübertragung.
+
+\paragraph{TLS/SSL}
+
+TLS (Transport Layer Security) und sein Vorgänger SSL (Secure Sockets Layer) sind Verschlüsselungsprotokolle, die zur Sicherung der Kommunikation über das Internet verwendet werden. Sie bieten Sicherheitsebenen, indem sie Verschlüsselung, Authentifizierung und Integritätsschutz für die übertragenen Daten bieten. TLS wird häufig in Kombination mit anderen Protokollen wie HTTPS (sicheres HTTP), SMTPS (sicheres SMTP) und FTPS (sicheres FTP) eingesetzt, um eine sichere Kommunikation zwischen Clients und Servern zu gewährleisten.
+
+\paragraph{IPsec}
+
+IPsec (Internet Protocol Security) ist ein Protokollsuite, die zur Sicherung der Kommunikation auf Netzwerkebene verwendet wird. Es bietet Vertraulichkeit, Integrität und Authentizität für die übertragenen IP-Pakete, indem es Verschlüsselung und Authentifizierung verwendet. IPsec wird häufig in Virtual Private Networks (VPNs) eingesetzt, um eine sichere Kommunikation über unsichere Netzwerke wie das Internet zu ermöglichen. Es kann in zwei Modi betrieben werden: Transportmodus, der nur die Nutzdaten verschlüsselt, und Tunnelmodus, der das gesamte IP-Paket einschließlich Header verschlüsselt.
+
+\paragraph{Hash}
+
+Ein Hash ist eine kryptografische Funktion, die eine Eingabe (Nachricht, Daten) in eine feste Länge von Daten umwandelt, die als Hash-Wert bezeichnet wird. Der Hash-Wert ist im Allgemeinen eine eindeutige, nicht umkehrbare Darstellung der Eingabe. Hash-Funktionen werden häufig verwendet, um die Integrität von Daten zu überprüfen, da eine geringfügige Änderung an den Eingabedaten zu einem völlig anderen Hash-Wert führt. Sie werden auch in Passwort-Hashes, digitalen Signaturen und anderen kryptografischen Anwendungen verwendet.
+
+\paragraph{Signatur}
+
+Eine Signatur ist ein kryptografisches Verfahren, das verwendet wird, um die Authentizität, Integrität und Nichtabstreitbarkeit von Daten zu gewährleisten. Sie wird normalerweise mit einem privaten Schlüssel erstellt und kann mit einem öffentlichen Schlüssel überprüft werden. Durch Signieren von Daten mit einem privaten Schlüssel können Sender ihre Identität bestätigen und sicherstellen, dass die Daten nicht manipuliert wurden. Die Empfänger können dann die Signatur mit dem öffentlichen Schlüssel des Senders überprüfen, um die Echtheit der Daten zu bestätigen.
+
+\paragraph{Zertifikate}
+
+Ein Zertifikat ist eine digitale Bescheinigung, die die Identität einer Entität (Person, Organisation, Website) authentifiziert und von einer vertrauenswürdigen Zertifizierungsstelle (Certificate Authority, CA) signiert ist. Zertifikate enthalten öffentliche Schlüssel und andere Informationen über die identifizierte Entität. Sie werden häufig in der SSL/TLS-Verschlüsselung verwendet, um die Identität von Websites zu bestätigen und die sichere Kommunikation zu gewährleisten.
+
+\paragraph{Certificate Authority}
+
+Eine Certificate Authority (CA) ist eine vertrauenswürdige Organisation, die digitale Zertifikate ausstellt und signiert, um die Identität von Entitäten im Internet zu authentifizieren. CAs sind für die Verifizierung der Identität von Antragstellern, die Ausstellung von Zertifikaten und die Verwaltung von Zertifikatswiderrufung verantwortlich. Zu den bekannten CAs gehören Unternehmen wie Let's Encrypt, VeriSign und Comodo, die von den gängigen Webbrowsern und Betriebssystemen als vertrauenswürdig eingestuft werden.
+
+
 
 \clearpage
