@@ -117,6 +117,146 @@ Ein Zertifikat ist eine digitale Bescheinigung, die die Identität einer Entitä
 
 Eine Certificate Authority (CA) ist eine vertrauenswürdige Organisation, die digitale Zertifikate ausstellt und signiert, um die Identität von Entitäten im Internet zu authentifizieren. CAs sind für die Verifizierung der Identität von Antragstellern, die Ausstellung von Zertifikaten und die Verwaltung von Zertifikatswiderrufung verantwortlich. Zu den bekannten CAs gehören Unternehmen wie Let's Encrypt, VeriSign und Comodo, die von den gängigen Webbrowsern und Betriebssystemen als vertrauenswürdig eingestuft werden.
 
+\subsection{Verschlüsselung}
+
+\paragraph{Symmetrische Verschlüsselung}
+
+Die symmetrische Verschlüsselung ist ein Verfahren, bei dem derselbe Schlüssel zum Verschlüsseln und Entschlüsseln von Daten verwendet wird. Sowohl der Sender als auch der Empfänger müssen denselben geheimen Schlüssel kennen, um die Kommunikation zu verschlüsseln und zu entschlüsseln. Symmetrische Verschlüsselungsalgorithmen wie AES (Advanced Encryption Standard) sind schnell und effizient, werden jedoch oft durch das Schlüsselverwaltungsproblem eingeschränkt, da der Schlüssel sicher zwischen den Parteien ausgetauscht werden muss.
+
+\paragraph{Asymmetrische Verschlüsselung}
+
+Die asymmetrische Verschlüsselung, auch Public-Key-Verschlüsselung genannt, verwendet zwei unterschiedliche Schlüssel: einen öffentlichen Schlüssel und einen privaten Schlüssel. Der öffentliche Schlüssel wird zum Verschlüsseln von Daten verwendet und kann frei verteilt werden, während der private Schlüssel zum Entschlüsseln der Daten verwendet wird und geheim gehalten werden muss. Dieses Verfahren ermöglicht sichere Kommunikation, da der private Schlüssel nicht offenbart wird. Asymmetrische Verschlüsselung wird häufig für digitale Signaturen, sichere E-Mail-Kommunikation und die Erstellung von SSL/TLS-Zertifikaten verwendet.
+
+\paragraph{RADIUS}
+
+RADIUS (Remote Authentication Dial-In User Service) ist ein Netzwerkprotokoll, das zur Authentifizierung, Autorisierung und Buchhaltung von Benutzern in einem Netzwerk verwendet wird, insbesondere in drahtlosen Netzwerken und virtuellen privaten Netzwerken (VPNs). RADIUS ermöglicht es Netzwerkgeräten wie WLAN-Zugriffspunkten, Switches und VPN-Konzentratoren, Benutzerinformationen über ein Netzwerk zu überprüfen und zu autorisieren, bevor sie den Netzwerkzugriff gewähren. Es bietet auch Funktionen zur Buchführung und Protokollierung von Benutzeraktivitäten im Netzwerk.
+
+\paragraph{Pre-shared key}
+
+Ein Pre-shared key (PSK) ist ein gemeinsamer geheimer Schlüssel, der zwischen zwei oder mehr Parteien vor der Kommunikation vereinbart wird. PSKs werden häufig in verschiedenen Sicherheitsprotokollen und -mechanismen verwendet, um die Authentizität und Vertraulichkeit der übertragenen Daten zu gewährleisten. Beispiele für den Einsatz von PSKs sind in WLAN-Netzwerken, VPN-Verbindungen und drahtlosen Sensornetzwerken, wo sie zur Authentifizierung und Verschlüsselung des Datenverkehrs verwendet werden. Im Gegensatz zu öffentlichen Schlüsselverfahren erfordern PSKs keine Infrastruktur für Zertifikate oder öffentliche Schlüsselverwaltung und sind daher oft einfacher einzurichten und zu verwalten.
+
+\subsection{LAN/WAN/MAN/GAN/SAN}
+
+\paragraph{LAN}
+
+Ein Local Area Network (LAN) ist ein Netzwerk, das Geräte in einem begrenzten geografischen Bereich wie einem Gebäude, einer Wohnung oder einem Campus miteinander verbindet. LANs ermöglichen den Austausch von Daten und Ressourcen wie Dateien, Druckern und Anwendungen zwischen den verbundenen Geräten. Sie werden häufig in Unternehmen, Bildungseinrichtungen und Privathaushalten eingesetzt und verwenden in der Regel Ethernet- oder WLAN-Technologien für die Verbindung der Geräte.
+
+\paragraph{WAN}
+
+Ein Wide Area Network (WAN) ist ein Netzwerk, das Geräte über große geografische Entfernungen miteinander verbindet, oft über öffentliche Telekommunikationsnetze wie das Internet oder private dedizierte Leitungen. WANs ermöglichen die Kommunikation zwischen entfernten Standorten, Niederlassungen und Rechenzentren und unterstützen verschiedene Dienste wie E-Mail, Webzugriff, VoIP und Videokonferenzen. WANs können sowohl öffentliche als auch private Verbindungen verwenden und erfordern in der Regel spezielle Netzwerkgeräte wie Router und Switches.
+
+\paragraph{MAN}
+
+Ein Metropolitan Area Network (MAN) ist ein Netzwerk, das mehrere LANs in einem geografisch begrenzten städtischen Gebiet miteinander verbindet. MANs bieten eine höhere Bandbreite und Reichweite als LANs und ermöglichen die Kommunikation zwischen verschiedenen Standorten innerhalb einer Stadt oder einer städtischen Region. Sie werden häufig von Unternehmen, Regierungsbehörden und Serviceanbietern eingesetzt, um standortübergreifende Dienste wie VoIP, Datenübertragung und Videoüberwachung bereitzustellen.
+
+\paragraph{GAN}
+
+Ein Global Area Network (GAN) ist ein Netzwerk, das mehrere WANs miteinander verbindet und eine weltweite Kommunikation ermöglicht. GANs nutzen verschiedene Technologien wie Satellitenverbindungen, Unterseekabel und drahtlose Netzwerke, um eine nahtlose Konnektivität über große geografische Entfernungen hinweg zu gewährleisten. Sie werden häufig von multinationalen Unternehmen, Telekommunikationsunternehmen und Regierungsbehörden eingesetzt, um weltweite Kommunikationsdienste anzubieten und globale Geschäftsaktivitäten zu unterstützen.
+
+\paragraph{SAN}
+
+Ein Storage Area Network (SAN) ist ein dediziertes Netzwerk, das die Verbindung von Speichergeräten wie Festplatten, Solid-State-Laufwerken (SSDs) und Speicherarrays mit Servern ermöglicht. SANs werden häufig in Rechenzentren und Unternehmensumgebungen eingesetzt, um eine zentrale und hochverfügbare Speicherlösung bereitzustellen. Sie ermöglichen es mehreren Servern, gleichzeitig auf gemeinsame Speicherressourcen zuzugreifen, was eine flexible und skalierbare Speicherinfrastruktur bietet. SANs verwenden oft spezielle Netzwerkprotokolle wie Fibre Channel oder iSCSI zur Datenübertragung zwischen den Servern und Speichergeräten.
+
+\subsection{Strukturierte Verkabelung}
+
+\paragraph{Primäre/Sekundäre/Tertiäre Verkabelung}
+
+Bei der strukturierten Verkabelung werden die Kabeltypen je nach ihrer Verwendung in primäre, sekundäre und tertiäre Verkabelung unterteilt.
+
+- Die primäre Verkabelung umfasst die Hauptverkabelung, die das gesamte Gebäude oder die gesamte Anlage abdeckt. Sie verbindet die Telekommunikationsräume, Verteiler und Etagenverteiler miteinander.
+
+- Die sekundäre Verkabelung umfasst die Verkabelung innerhalb einzelner Etagen oder Abteilungen. Sie verbindet die Verteiler mit den Anschlussdosen und sorgt für die horizontale Verbindung zu den Endgeräten.
+
+- Die tertiäre Verkabelung umfasst die Verkabelung innerhalb eines Raumes oder einer Arbeitsplatzgruppe. Sie umfasst die Anschlussdosen, Patchfelder und Patchkabel, die die Endgeräte mit dem Netzwerk verbinden.
+
+\paragraph{Kabeltypen}
+
+\subparagraph{Twisted Pair}
+
+Twisted Pair ist ein Kabeltyp, der aus mehreren Kupferdrahtpaaren besteht, die miteinander verdrillt sind. Diese Verdrillung reduziert elektromagnetische Störungen und verbessert die Signalqualität. Twisted-Pair-Kabel werden häufig für die Verkabelung von Ethernet-Netzwerken, Telefonleitungen und anderen Datenübertragungsanwendungen verwendet. Es gibt verschiedene Kategorien von Twisted-Pair-Kabeln, wie z.B. Cat5e, Cat6 und Cat6a, die unterschiedliche Bandbreiten und Übertragungsgeschwindigkeiten bieten.
+
+\subparagraph{LWL}
+
+LWL (Lichtwellenleiter) oder Glasfaserkabel bestehen aus dünnen Glas- oder Kunststofffasern, die Lichtsignale zur Übertragung von Daten verwenden. Sie bieten eine hohe Bandbreite, geringe Dämpfung und Immunität gegen elektromagnetische Interferenzen, was sie ideal für die Übertragung großer Datenmengen über große Entfernungen macht. LWL-Kabel werden häufig in Backbone-Netzwerken, Telekommunikationsnetzen und Rechenzentren eingesetzt, wo hohe Übertragungsraten und Zuverlässigkeit erforderlich sind.
+
+\subsection{VLAN}
+
+\paragraph{VLAN}
+
+Ein Virtual Local Area Network (VLAN) ist ein logisches Netzwerk, das aus Geräten in verschiedenen physischen Netzwerken besteht, die auf der Grundlage von Portnummern, MAC-Adressen, Protokollen oder anderen Kriterien gruppiert sind. VLANs ermöglichen es, ein physisches Netzwerk in mehrere virtuelle Netzwerke zu unterteilen, wodurch die Sicherheit, Skalierbarkeit und Verwaltbarkeit verbessert werden. Sie können verwendet werden, um Benutzer in verschiedenen Abteilungen, virtuelle Maschinen, Gäste und andere Gruppen zu isolieren und den Datenverkehr zwischen den VLANs zu steuern.
+
+\subsection{Sicherheitskonzepte und -risiken: WEB, WPA}
+
+\paragraph{WEB}
+
+Wired Equivalent Privacy (WEP) ist ein veraltetes Sicherheitsprotokoll, das zur Verschlüsselung von Daten in drahtlosen Netzwerken verwendet wurde. WEP verwendet symmetrische Verschlüsselung mit einem gemeinsamen Schlüssel, um die Vertraulichkeit des Datenverkehrs zu gewährleisten. Es war jedoch anfällig für verschiedene Sicherheitslücken und Schwachstellen, die es Angreifern ermöglichten, den WEP-Schlüssel zu knacken und auf den Netzwerkverkehr zuzugreifen. Aufgrund seiner Schwächen wurde WEP durch sicherere Protokolle wie WPA und WPA2 ersetzt.
+
+\paragraph{WPA}
+
+Wi-Fi Protected Access (WPA) ist ein Sicherheitsprotokoll, das entwickelt wurde, um die Sicherheit von drahtlosen Netzwerken zu verbessern und die Schwächen von WEP zu überwinden. WPA verwendet verbesserte Verschlüsselungsalgorithmen wie TKIP (Temporal Key Integrity Protocol) und AES (Advanced Encryption Standard), um die Vertraulichkeit und Integrität des Datenverkehrs zu gewährleisten. Es bietet auch Funktionen wie Pre-shared Key (PSK), 802.1X-Authentifizierung und dynamische Schlüsselwechsel, um die Sicherheit des drahtlosen Netzwerks weiter zu erhöhen.
+
+\subsection{Netzwerktopologien}
+
+\paragraph{Netzwerktopologien}
+
+Eine Netzwerktopologie beschreibt die physische oder logische Anordnung von Geräten, Kabeln und anderen Komponenten in einem Netzwerk. Es gibt verschiedene Arten von Netzwerktopologien, die je nach den Anforderungen und den spezifischen Einsatzszenarien eines Netzwerks eingesetzt werden können.
+
+\begin{itemize}
+	\item Die Bus-Topologie besteht aus einem einzigen Kommunikationskanal, der von allen Geräten im Netzwerk gemeinsam genutzt wird. Alle Geräte sind direkt mit diesem Bus verbunden, was zu einer einfachen und kostengünstigen Verkabelung führt. Ein Ausfall eines Geräts kann jedoch das gesamte Netzwerk beeinträchtigen.
+	\item Die Stern-Topologie besteht aus einem zentralen Knoten, der alle anderen Geräte im Netzwerk verbindet. Alle Datenverbindungen laufen über diesen zentralen Knoten, was eine einfache Erweiterung und Verwaltung ermöglicht. Ein Ausfall des zentralen Knotens kann jedoch das gesamte Netzwerk lahmlegen.
+	\item Die Ring-Topologie besteht aus einer Reihe von Geräten, die in einer geschlossenen Schleife verbunden sind. Daten werden in einer Richtung von einem Gerät zum nächsten übertragen, bis sie ihr Ziel erreichen. Diese Topologie bietet eine gleichmäßige Lastverteilung und hohe Zuverlässigkeit, ist jedoch anfällig für Ausfälle, da der Ausfall eines einzigen Geräts den gesamten Ring unterbrechen kann.
+	\item Die Stern-basierte Ring-Topologie kombiniert die Vorteile der Stern- und Ring-Topologien, indem sie eine Sternstruktur mit einem Ringverbindungsnetzwerk innerhalb des Sterns verwendet. Dies bietet die Vorteile einer einfachen Erweiterung und Verwaltung sowie einer gleichmäßigen Lastverteilung und hohen Zuverlässigkeit.
+	\item Die Mesh-Topologie besteht aus einer Reihe von Geräten, die direkt miteinander verbunden sind und mehrere Pfade zur Kommunikation bieten. Diese Topologie bietet eine hohe Redundanz und Ausfallsicherheit, ist jedoch aufgrund der großen Anzahl von Verbindungen zwischen den Geräten teuer und schwer zu verwalten.
+\end{itemize}
+
+\subsection{Netzwerkplan}
+
+\paragraph{Netzwerkplan}
+
+Ein Netzwerkplan ist eine schematische Darstellung eines Netzwerks, die die physische und logische Struktur sowie die Konnektivität der verschiedenen Netzwerkkomponenten zeigt. Ein Netzwerkplan kann verschiedene Elemente enthalten, wie z.B. Router, Switches, Server, Arbeitsstationen, Verbindungslinien, IP-Adressen und VLANs. Er dient als Referenzdokument für Netzwerkadministratoren und IT-Techniker, um das Netzwerkdesign zu visualisieren, Änderungen zu planen und Probleme zu diagnostizieren.
+
+\subsection{VPN}
+
+\paragraph{Funktionsweise von VPN}
+
+Ein Virtual Private Network (VPN) ist eine Technologie, die es Benutzern ermöglicht, eine sichere Verbindung zu einem privaten Netzwerk über ein öffentliches Netzwerk wie das Internet herzustellen. VPNs verwenden Verschlüsselung und andere Sicherheitsmechanismen, um den Datenverkehr zwischen dem Benutzer und dem privaten Netzwerk zu schützen und die Privatsphäre und Sicherheit zu gewährleisten. VPNs können verwendet werden, um sichere Remote-Zugriffe auf Unternehmensnetzwerke, den Schutz der Privatsphäre bei der Internetnutzung und die Umgehung geografischer Einschränkungen zu ermöglichen.
+
+\paragraph{VPN-Modelle}
+
+Es gibt verschiedene VPN-Modelle, die je nach den Anforderungen und dem Einsatzzweck eines Netzwerks eingesetzt werden können:
+
+\begin{itemize}
+	\item Remote Access VPN: Ermöglicht autorisierten Benutzern den sicheren Zugriff auf das Unternehmensnetzwerk von entfernten Standorten aus über das Internet.
+	\item Site-to-Site VPN: Verbindet zwei oder mehr physische Standorte oder Netzwerke miteinander und ermöglicht den sicheren Austausch von Daten über das Internet.
+	\item Extranet VPN: Ermöglicht autorisierten externen Benutzern oder Partnern den sicheren Zugriff auf bestimmte Ressourcen oder Dienste im Unternehmensnetzwerk.
+	\item Intranet VPN: Bietet sicheren Zugriff auf interne Ressourcen und Dienste innerhalb eines Unternehmensnetzwerks für autorisierte Benutzer, unabhängig von ihrem Standort.
+\end{itemize}
+
+\paragraph{Tunneling}
+
+Tunneling ist ein Prozess, bei dem Datenpakete in einem anderen Netzwerkprotokoll eingekapselt werden, um sie sicher über ein unsicheres Netzwerk zu übertragen. Bei der VPN-Kommunikation wird Tunneling verwendet, um den privaten Datenverkehr über das öffentliche Internet zu transportieren, ohne dass Dritte den Inhalt der Daten sehen oder manipulieren können. Die Daten werden verschlüsselt und in Pakete eines anderen Protokolls eingekapselt, bevor sie über das Internet gesendet werden. Am Zielort werden die Pakete wieder entkapselt und entschlüsselt, um die ursprünglichen Daten wiederherzustellen.
+
+\subsection{Serverarten}
+
+\paragraph{Mailserver}
+
+Ein Mailserver ist ein spezieller Server, der E-Mails empfängt, speichert, weiterleitet und zustellt. Er fungiert als zentrale Komponente eines E-Mail-Systems und ermöglicht es Benutzern, E-Mails zu senden und zu empfangen. Mailserver verwenden verschiedene Protokolle wie SMTP (Simple Mail Transfer Protocol), POP3 (Post Office Protocol Version 3) und IMAP (Internet Message Access Protocol) für die Kommunikation zwischen den Clients und dem Server.
+
+\paragraph{Webserver}
+
+Ein Webserver ist ein Server, der Webinhalte wie Webseiten, Bilder, Videos und andere Dateien über das World Wide Web bereitstellt. Er empfängt HTTP-Anfragen von Webbrowsern und sendet die angeforderten Dateien als HTTP-Antworten zurück. Webserver hosten Websites und Webanwendungen und verwenden häufig Serversoftware wie Apache, Nginx, Microsoft IIS und andere.
+
+\paragraph{Groupware}
+
+Groupware bezeichnet Softwareanwendungen, die die Zusammenarbeit und Kommunikation in einer Gruppe oder Organisation erleichtern. Ein Groupware-Server ermöglicht es Benutzern, gemeinsam an Projekten zu arbeiten, Termine zu planen, Dokumente zu teilen, E-Mails zu senden und andere kollaborative Aktivitäten durchzuführen. Beispiele für Groupware-Server sind Microsoft Exchange Server, IBM Notes/Domino und Open-Xchange.
+
+\paragraph{Datenbanken}
+
+Ein Datenbankserver ist ein spezieller Server, der die Speicherung, Verwaltung und Abfrage von Daten in einer Datenbank ermöglicht. Er fungiert als zentrale Schnittstelle für Benutzer und Anwendungen, um auf die Datenbank zuzugreifen und mit ihr zu interagieren. Datenbankserver verwenden SQL (Structured Query Language) oder andere Abfragesprachen, um Daten zu manipulieren und abzurufen. SQL-Datenbanken, wie MySQL, PostgreSQL, Oracle Database und Microsoft SQL Server, folgen einem relationalen Datenbankmodell und speichern Daten in Tabellen, die durch Beziehungen miteinander verbunden sind. Im Gegensatz dazu verwenden NoSQL-Datenbanken, wie MongoDB, Couchbase und Cassandra, ein nicht-relationales Datenbankmodell, das keine festen Tabellenstrukturen erfordert. NoSQL-Datenbanken sind flexibler und skalierbarer für die Speicherung unstrukturierter Daten, wie beispielsweise in Big-Data-Anwendungen, aber SQL-Datenbanken sind oft besser geeignet für komplexe Abfragen und Transaktionen in traditionellen Unternehmensanwendungen.
+
+\paragraph{Proxy}
+
+Ein Proxyserver ist ein Server, der als Vermittler zwischen Clientgeräten und anderen Servern im Internet fungiert. Er empfängt Anfragen von Clientgeräten wie Webbrowsern und leitet sie an andere Server weiter. Proxyserver können verschiedene Funktionen erfüllen, darunter die Verbesserung der Sicherheit und Privatsphäre, die Optimierung der Netzwerk- und Webbeschleunigung sowie die Filterung und Blockierung von unerwünschtem Datenverkehr. Sie werden häufig in Unternehmensnetzwerken, Schulen und öffentlichen WLANs eingesetzt.
 
 
 \clearpage
