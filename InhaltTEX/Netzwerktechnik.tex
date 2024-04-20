@@ -1,6 +1,26 @@
 \section{Netzwerktechnik}
 \label{sec:Netzwerktechnik}
 
+\subsection{ISO/OSI Modell}
+
+\paragraph{ISO/OSI Modell} Das ISO/OSI-Modell (International Organization for Standardization/Open Systems Interconnection Model) ist ein Referenzmodell, das die Grundlagen für die Kommunikation in Rechnernetzen definiert. Es unterteilt den Kommunikationsprozess in sieben Schichten, wobei jede Schicht bestimmte Funktionen und Dienste für die Datenübertragung bereitstellt. Diese Schichten sind:
+\begin{enumerate}
+	\item \textbf{Physikalische Schicht (Physical Layer):} Diese Schicht ist für die physische Übertragung von Datenbits über das Kommunikationsmedium verantwortlich. Sie beschäftigt sich mit Aspekten wie Signalisierung, Übertragungsraten und elektrischen Eigenschaften der Verbindungen.\\
+	\textbf{Protokolle:} Token Ring
+	\item \textbf{Sicherungsschicht (Data Link Layer):} Die Sicherungsschicht ist für die fehlerfreie Übertragung von Datenrahmen zwischen benachbarten Netzwerkknoten verantwortlich. Sie befasst sich mit Themen wie Rahmenbildung, Adressierung, Fehlererkennung und -korrektur sowie Zugriffskontrolle.\\
+	\textbf{Protokolle:} MAC, Ethernet, Token Ring
+	\item \textbf{Netzwerkschicht (Network Layer):} Diese Schicht ist für die Weiterleitung von Datenpaketen von einem Quell- zum Zielknoten über ein Netzwerk verantwortlich. Sie bietet Funktionen wie Routing, Adressierung und Vermittlung von Daten zwischen verschiedenen Subnetzen.\\
+	\textbf{Protokolle:} IP, IPsec, ICMP
+	\item \textbf{Transportschicht (Transport Layer):} Die Transportschicht ist für die zuverlässige Übertragung von Daten zwischen Endpunkten (z.B. Hosts) im Netzwerk verantwortlich. Sie stellt sicher, dass Datenpakete korrekt und in der richtigen Reihenfolge übertragen werden und bietet Mechanismen zur Fehlerbehebung und Flusskontrolle.\\
+	\textbf{Protokolle:} TCP, UDP
+	\item \textbf{Sitzungsschicht (Session Layer):} Die Sitzungsschicht ist für die Verwaltung von Sitzungen oder Verbindungen zwischen Anwendungen auf verschiedenen Netzwerkknoten verantwortlich. Sie ermöglicht die Einrichtung, Aufrechterhaltung und Beendigung von Kommunikationssitzungen sowie die Synchronisierung und Wiederherstellung von Datenübertragungen.\\
+	\textbf{Protokolle:} DHCP, DNS, FTP, HTTP, HTTPS, LDAP, SMTP
+	\item \textbf{Darstellungsschicht (Presentation Layer):} Diese Schicht ist für die Umwandlung von Daten in ein für die Übertragung geeignetes Format verantwortlich und umgekehrt. Sie kümmert sich um Aspekte wie Datenkompression, Verschlüsselung, Formatierung und Kodierung, um sicherzustellen, dass Daten zwischen verschiedenen Systemen verstanden werden können.\\
+	\textbf{Protokolle:} DHCP, DNS, FTP, HTTP, HTTPS, LDAP, SMTP
+	\item \textbf{Anwendungsschicht (Application Layer):} Die Anwendungsschicht ist die oberste Schicht des ISO/OSI-Modells und stellt Dienste und Schnittstellen bereit, die Anwendungen den Zugriff auf das Netzwerk ermöglichen. Sie umfasst Protokolle und Dienste für Anwendungen wie E-Mail, Dateiübertragung, Remotezugriff und Webbrowser.\\
+	\textbf{Protokolle:} DHCP, DNS, FTP, HTTP, HTTPS, LDAP, SMTP
+\end{enumerate}
+
 \subsection{Addressierung}
 
 \paragraph{IPv4/IPv6}
@@ -93,7 +113,7 @@ RADIUS (Remote Authentication Dial-In User Service) ist ein Netzwerkprotokoll, d
 
 Ein Pre-shared key (PSK) ist ein gemeinsamer geheimer Schlüssel, der zwischen zwei oder mehr Parteien vor der Kommunikation vereinbart wird. PSKs werden häufig in verschiedenen Sicherheitsprotokollen und -mechanismen verwendet, um die Authentizität und Vertraulichkeit der übertragenen Daten zu gewährleisten. Beispiele für den Einsatz von PSKs sind in WLAN-Netzwerken, VPN-Verbindungen und drahtlosen Sensornetzwerken, wo sie zur Authentifizierung und Verschlüsselung des Datenverkehrs verwendet werden. Im Gegensatz zu öffentlichen Schlüsselverfahren erfordern PSKs keine Infrastruktur für Zertifikate oder öffentliche Schlüsselverwaltung und sind daher oft einfacher einzurichten und zu verwalten.
 
-\subsection{LAN/WAN/MAN/GAN/SAN}
+\subsection{Netzwerktypen}
 
 \paragraph{LAN}
 
@@ -114,6 +134,10 @@ Ein Global Area Network (GAN) ist ein Netzwerk, das mehrere WANs miteinander ver
 \paragraph{SAN}
 
 Ein Storage Area Network (SAN) ist ein dediziertes Netzwerk, das die Verbindung von Speichergeräten wie Festplatten, Solid-State-Laufwerken (SSDs) und Speicherarrays mit Servern ermöglicht. SANs werden häufig in Rechenzentren und Unternehmensumgebungen eingesetzt, um eine zentrale und hochverfügbare Speicherlösung bereitzustellen. Sie ermöglichen es mehreren Servern, gleichzeitig auf gemeinsame Speicherressourcen zuzugreifen, was eine flexible und skalierbare Speicherinfrastruktur bietet. SANs verwenden oft spezielle Netzwerkprotokolle wie Fibre Channel oder iSCSI zur Datenübertragung zwischen den Servern und Speichergeräten.
+
+\paragraph{PAN}
+
+Die Abkürzung 'PAN' steht für 'Personal Area Network' (Persönliches Netzwerk). Ein PAN ist ein Netzwerk, das sich in einem begrenzten Bereich um eine Person herum erstreckt und verschiedene Geräte miteinander verbindet, die sich in unmittelbarer Nähe befinden. Typische Geräte in einem PAN sind Computer, Smartphones, Tablets, Drucker, Headsets und andere persönliche elektronische Geräte.
 
 \subsection{Strukturierte Verkabelung}
 

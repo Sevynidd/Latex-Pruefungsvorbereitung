@@ -7,10 +7,31 @@
 	\item Softwarearchitektur
 	\begin{itemize}
 		\item 3-Schichten-Modell
-		\item 7-Schichten-Modell
 		\item Model View Controller (MVC)
 		\item Model View Presenter (MVP)
 		\item Model-View-ViewModel (MVVM)
 		\item REST
 	\end{itemize}
 \end{itemize}
+
+\paragraph{Bottom-Up}
+
+\paragraph{3-Schichten-Modell}
+
+Das 3-Schichten-Modell ist ein Architekturmuster zur Strukturierung von Anwendungen, bei dem die Anwendung in drei Schichten unterteilt wird: die Präsentationsschicht (Presentation Layer), die Logikschicht (Business Logic Layer) und die Datenschicht (Data Layer). Jede Schicht hat eine klar definierte Verantwortung und Aufgabe: Die Präsentationsschicht ist für die Darstellung der Benutzeroberfläche und die Interaktion mit dem Benutzer zuständig, die Logikschicht enthält die Geschäftslogik und die Anwendungslogik und die Datenschicht kümmert sich um den Zugriff auf die Datenbank oder andere externe Datenquellen.
+
+\paragraph{Model View Controller (MVC)}
+
+MVC ist ein Entwurfsmuster zur Strukturierung von Benutzeroberflächen in Softwareanwendungen. Es teilt die Anwendung in drei Hauptkomponenten auf: das Modell (Model), die Ansicht (View) und den Controller. Das Modell repräsentiert die Daten und die Geschäftslogik der Anwendung, die Ansicht ist für die Darstellung der Benutzeroberfläche zuständig, und der Controller nimmt Benutzereingaben entgegen, verarbeitet sie und aktualisiert das Modell und die Ansicht entsprechend.
+
+\paragraph{Model View Presenter (MVP)}
+
+MVP ist ein Variante des MVC-Musters, bei dem der Presenter als Vermittler zwischen dem Modell und der Ansicht fungiert. Der Presenter übernimmt die Aufgabe der Steuerung der Benutzerinteraktionen und der Aktualisierung des Modells und der Ansicht. Im Gegensatz zum MVC-Muster ist die Ansicht im MVP-Muster passiv und enthält keine Logik, was zu einer besseren Trennung von Präsentation und Geschäftslogik führt.
+
+\paragraph{Model View ViewModel (MVVM)}
+
+MVVM ist ein weiteres Entwurfsmuster zur Strukturierung von Benutzeroberflächen, das häufig in der Entwicklung von Desktop- und Webanwendungen verwendet wird. Es ähnelt dem MVP-Muster, aber anstelle eines Presenters wird ein ViewModel verwendet, um die Präsentation der Daten zu steuern. Das ViewModel stellt eine abstrakte Repräsentation der Ansicht dar und erleichtert die Bindung von Daten zwischen dem Modell und der Ansicht.
+
+\paragraph{REST}
+
+REST (Representational State Transfer) ist ein Architekturstil für die Entwicklung von verteilten Systemen, insbesondere Webanwendungen. Es basiert auf dem Prinzip, dass Ressourcen über einheitliche Schnittstellen (URLs) angesprochen und durch die standardisierten HTTP-Methoden (GET, POST, PUT, DELETE) manipuliert werden können. RESTful-Services verwenden keine speziellen Protokolle oder Technologien, sondern nutzen die vorhandenen HTTP-Standards für die Kommunikation zwischen Client und Server.
