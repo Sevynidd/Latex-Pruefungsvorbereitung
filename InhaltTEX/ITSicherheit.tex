@@ -86,11 +86,6 @@ Quelle: BSI \cite{BSISchutzbedarf}
 
 \todo{Fehlt}
 
-\subsubsection{Spam}
-\label{sec:Spam}
-
-\todo{Fehlt}
-
 \subsubsection{Phishing}
 \label{sec:Phishing}
 
@@ -104,17 +99,11 @@ Quelle: BSI \cite{BSISchutzbedarf}
 \subsubsection{Man-in-the-Middle (MITM)}
 \label{sec:ManInTheMiddle}
 
-
-
+Bei einer MITM-Attacke platziert sich der Angreifer so, dass er die relevante Kommunikation zwischen Person 1 und Person 2 über ein vomn ihm kontrolliertes System leitet und somit den gesamten Traffic mitlesen und ggf. sogar manipulieren kann. Dies geschieht für Person 1 und Person 2 komplett transparent. Das bedeutet, dass Person 1 glaubt, mit Person 2 direkt zu kommunizieren, und umgekehrt. Tatsächlich aber gibt sich der Angreifer gegenüber Person 1 als Person 2 aus und gegenüber Person 2 tut er so, als wäre er Person 1.
 
 
 \subsubsection{SQL-Injection}
 \referenz{sec:SQLInjection}
-
-\subsubsection{Session Hijacking}
-\label{sec:SessionHijacking}
-
-\todo{Fehlt}
 
 \subsubsection{DoS, DDoS}
 \label{sec:DoSDDoS}
@@ -161,11 +150,6 @@ Zahlreiche Schadprogramme versuchen, den Anwender auszuspionieren, und senden di
 
 Ein \textit{Botnet} besteht aus zahlreichen \textit{Bots}, also einem Stückchen Software, das sich im Opfer-System eingenistet hat und bereit ist, vom Command \& Control-Server aus dem Internet Befehle zu empfangen. Bots könenn diverse Funktionen erfüllen - angefangen vom Spamversand über Spyware-Funktionen bis hin zu gezielten und konzentrierten \textit{Distributed-Denial-of-Service-Angriffen}.
 
-\subsubsection{Adware}
-\label{sec:Adware}
-
-\todo{Fehlt}
-
 \subsubsection{Scareware}
 \label{sec:Scareware}
 
@@ -198,5 +182,18 @@ Eine sehr effektive Möglichkeit, Malware und unerwünschte Prozesse zu versteck
 \subsubsection{Verbreitung von Viren/Würmern/Trojanern}
 \label{sec:VerbreitungVirenWuermerTrojaner}
 
-\todo{Fehlt}
+\begin{itemize}
+	\item \textit{Websites:} Eines der wichtigsten Einfallstore für Malware sind kompromittierte Websites. Besucht das Opfer die Website, gibt es verschiedene Möglichkeiten, die der Angreifer ausnutzen kann.
+	\begin{itemize}
+		\item Via \textit{Drive-by-Downloads} wird Software ohne Wissen und Zutun des Benutzers automatisch heruntergeladen und installiert. Hierzu werden Browser-Schwachstellen ausgenutzt, da regulär HTML-Code oder Browser-Skriptsprachen kein Zugriff auf Bereiche außerhalb der Browser-Umgebung gestattet wird. Die Voraussetzung hierfür ist also ein ungepatchter Browser oder eine Zero-Day-Schwachstelle.
+	\end{itemize}
+	\item \textit{Instant Messenger:} 
+	\item \textit{Wechselmedien (USB-Sticks):}
+	\item \textit{E-Mail-Anhänge:}
+	\item \textit{Links in E-Mails und Websites:}
+	\item \textit{File Sharing:}
+	\item \textit{Windows-Freigaben:}
+	\item \textit{Software-Bugs:}
+	\item \textit{Fehlkonfiguration:}
+\end{itemize}
 
