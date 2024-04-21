@@ -135,4 +135,68 @@ Diese Schritte müssen gleich in Form von sogenannten Knoten dargestellt und mit
 
 Zuerst erstellst Du einen vorläufigen Netzplan, in dem einerseits die Prozessschritte und ihre Abhängigkeiten abgebildet sind und andererseits die jeweilige Dauer der Knoten. Das sieht für unseren konkreten Fall dann so aus:
 
+\begin{center}
+	\includegraphics[width=\textwidth]{Bilder/Netzplan/Netzplan1.png}
+\end{center}
 
+\subsubsection{Schritt 2: Vorwärtsterminierung}
+
+Bei der sogenannten Vorwärtsterminierung wanderst du alle Pfade vom Anfang bis zum Ende, also in unserem Fall von Schritt A zu Schritt G. Dabei trägst du jeweils den frühesten Anfangszeitpunkt (FAZ, oben links) und den frühesten Endzeitpunkt (FEZ, oben rechts) für jeden Prozessschritt in das Schema ein.
+
+Um die jeweiligen Zeitpunkte zu berechnen, musst du folgendes beachten:
+
+\begin{itemize}
+	\item Der FAZ des ersten Prozessschrittes (A) ist immer gleich 0.
+	\item Der FEZ eines Vorgangs ergibt sich immer aus der Summe von FAZ und Dauer. Bei Schritt A wären das beispielsweise $0 + 2 = 2$.
+	\item Der FEZ eines Vorgangs ist gleichzeitig der FAZ des nachfolgenden Prozessschrittes bzw. der nachfolgenden Prozessschritte. Dieses Übertragen der Werte kannst du auf der folgenden Grafik an allen Knoten erkennen.
+	\item Hat ein Knoten mehrere Vorgänger (z. B. der Knoten E) wird derjenige Vorgänger-FEZ genommen, der den höchsten Wert aufweist (hier also die 9 von Schritt C).
+\end{itemize}
+
+Nach diesen Rechenregeln erhalten wir den Zwischenstand, den du in der nächsten Grafik siehst:
+
+\begin{center}
+	\includegraphics[width=\textwidth]{Bilder/Netzplan/Netzplan2.png}
+\end{center}
+
+\subsubsection{Schritt 3: Rückwärtsterminierung}
+
+Anschließend werden die Pfade nochmal rückwärts durchlaufen, um jeweils den spätesten Anfangszeitpunkt (SAZ, unten links) und den spätesten Endzeitpunkt (SEZ, unten rechts) zu ergänzen. Auch dabei sind einige Regeln zu beachten.
+
+\begin{itemize}
+	\item Der SEZ des letzten Prozessschrittes, in unserem Fall also G, entspricht immer seinem FEZ. Er ist der Ausgangspunkt für die Rückwärtsterminierung.
+	\item Der SAZ ergibt sich immer aus der Differenz von SEZ und Dauer des Vorgangs. Er zeigt an, wann ein Prozessschritt spätestens begonnen werden muss.
+	\item Der SAZ eines Schrittes (z. B. 13 für Schritt G) ist identisch zum SEZ des vorherigen Schrittes (z. B. ebenfalls 13 für Schritt F und Schritt E). Er muss also nur korrekt übertragen werden.
+	\item Hat ein Prozessschritt mehrere Nachfolger (z. B. E und F, die auf C folgen), wird als SEZ der jeweils kleinste Wert der möglichen SAZ übernommen (hier also 9 von Schritt F und nicht 12 von Schritt E).
+\end{itemize}
+
+Nach diesem Schema arbeitest du dich nun Stück für Stück zum ersten Teilschritt A vor.
+Nach diesem Verfahren ergibt sich in unserem Beispiel folgender, vorläufiger Netzplan:
+
+\begin{center}
+	\includegraphics[width=\textwidth]{Bilder/Netzplan/Netzplan3.png}
+\end{center}
+
+\subsubsection{Schritt 4: Pufferzeiten berechnen}
+
+Nun kannst du für jeden Teilschritt die jeweiligen Puffer berechnen:
+
+\begin{itemize}
+	\item Für den Gesamtpuffer GP ermittelst du dafür die Differenz aus SAZ und FAZ. Er zeigt dir an, wie viel Verzögerung akzeptabel ist, bevor der \textbf{pünktliche Abschluss des Gesamtprozesses} gefährdet wird.
+	\item Für den freien Puffer eines Prozessschritts (FP) berechnest du jeweils die Differenz aus dem FAZ des nachfolgenden Schritts und dem eigenen FEZ. Sollte es mehrere Nachfolger geben, wird stets die kleinste Alternative der FAZ genommen. Hiermit wird abgebildet, wie viel Puffer vorhanden ist, bevor \textbf{ein unmittelbar folgender Prozessschritt beeinflusst}
+\end{itemize}
+
+Anschließend ergibt sich daraus der vollständige Netzplan:
+
+\begin{center}
+	\includegraphics[width=\textwidth]{Bilder/Netzplan/Netzplan4.png}
+\end{center}
+
+\subsubsection{Schritt 5: Kritischen Pfad ermitteln}
+
+Abschließend kannst du den kritischen Pfad des gesamten Prozesses ermitteln; also alle Teilschritte, in denen sich keine Verzögerung ergeben darf, wenn der ursprüngliche Termin eingehalten werden soll.
+
+Dazu gehören \textbf{alle Prozessschritte, die weder einen freien Puffer noch einen Gesamtpuffer aufweisen}. Im Beispiel ist das der Pfad ABCFG, der in der nächsten Grafik farblich hervorgehoben ist.
+
+\begin{center}
+	\includegraphics[width=\textwidth]{Bilder/Netzplan/Netzplan5.png}
+\end{center}
