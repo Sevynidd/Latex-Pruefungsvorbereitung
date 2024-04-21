@@ -67,3 +67,72 @@
 
 Farbtiefe, RGB, Pixel, DPI, etc.
 
+\paragraph{DPI} Dots per Inch (Pixel pro Inch)
+
+
+\subsection{Netzplan}
+\label{sec:Netzplan}
+
+\quelle{MODU learn}{Netzplan}
+
+Die Basis für den Netzplan ist ein Prozess, der aus insgesamt sieben Teilschritten besteht. Zu jedem Schritt sind sowohl die Dauer als auch die vorher abzuschließenden Aufgaben bekannt:
+
+\begin{center}
+	\bgroup
+	\setlength{\tabcolsep}{1em}
+	\def\arraystretch{1.5}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\rowcolor{tableLightGray}Prozessschritt & Dauer in Stunden & Vorher zu beenden \\
+		\hline
+		A & 2 & - \\
+		\hline
+		B & 4 & A \\
+		\hline
+		C & 3 & B \\
+		\hline
+		D & 2 & B \\
+		\hline
+		E & 1 & C,D \\
+		\hline
+		F & 4 & C \\
+		\hline
+		G & 5 & E,F \\
+		\hline
+	\end{tabular}
+	\egroup
+\end{center}
+
+Diese Schritte müssen gleich in Form von sogenannten Knoten dargestellt und miteinander verbunden werden. Daher sollten wir uns als zusätzliche Vorbereitung den grundlegenden Aufbau eines Knotens anschauen. Er weist die folgende Struktur auf:
+
+\begin{center}
+	\begin{tikzpicture}[
+		align=center,
+		every node/.style={minimum height = 1cm, minimum width = 1cm}]
+		
+		\draw (0,0) node[anchor=north east]{SAZ} -- (3,0);
+		\draw (3,0) node[anchor=north west]{SEZ} -- (3,2);
+		\draw (3,2) node[anchor=south west]{FEZ} -- (0,2);
+		\draw (0,2) node[anchor=south east]{FAZ} -- (0,0);
+		
+		\draw (1,0) node[anchor=south west]{GP} -- (1,2);
+		\draw (2,0) node[anchor=south west]{FP} -- (2,1);
+		\draw (0,1) node[anchor=south west]{PS} node[anchor=north west]{D} -- (3,1);
+		
+	\end{tikzpicture}
+\end{center}
+
+\textbf{PS} = Prozessschritt (in unserem Fall A bis F)\\
+\textbf{D} = Dauer des jeweiligen Vorgangs\\
+\textbf{FAZ} = Frühester Anfangszeitpunkt, zu dem der Prozessschritt begonnen werden kann\\
+\textbf{FEZ} = Frühester Endzeitpunkt, zu dem der Prozessschritt abgeschlossen werden kann\\
+\textbf{SAZ} = Spätester Anfangszeitpunkt, um den Gesamtprozess planmäßig beenden zu können\\
+\textbf{SEZ} = Spätester Endzeitpunkt, zu dem ein Schritt abgeschlossen sein muss, um den geplanten Abschlusstermin nicht zu gefährden\\
+\textbf{GP} = Gesamtpuffer, der genutzt werden kann, bevor der pünktliche Abschluss des Gesamtprozesses gefährdet wird\\
+\textbf{FP} = Freier Puffer, der zur Verfügung steht, bevor der unmittelbar folgende Prozessschritt beeinflusst wird\\
+
+\subsubsection{Schritt 1: Knoten verknüpfen}
+
+Zuerst erstellst Du einen vorläufigen Netzplan, in dem einerseits die Prozessschritte und ihre Abhängigkeiten abgebildet sind und andererseits die jeweilige Dauer der Knoten. Das sieht für unseren konkreten Fall dann so aus:
+
+
